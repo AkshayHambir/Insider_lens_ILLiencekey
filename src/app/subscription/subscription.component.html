@@ -1,0 +1,52 @@
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()"> 
+    <div class="container">
+        <mat-toolbar class="subscriptionToolbar">
+            <span class="fill-remaining-space"></span>
+            <span>Subscription Form</span>
+            <span class="fill-remaining-space"></span>
+        </mat-toolbar>
+    </div>
+    <mat-grid-list cols="1" rowHeight="500px">
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName="$key">
+                <mat-form-field>
+                    <mat-select formControlName="clientNamesub" placeholder="Client Name*">
+                      <mat-option>None</mat-option>
+                      <ng-container *ngFor="let clientNamesub of clientsName">
+                        <mat-option value="{{clientNamesub.id}}">{{clientNamesub.value}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="noActiveDP" matInput placeholder="Number of Active DP *" value="0">
+                    <mat-error *ngIf="service.form.controls['noActiveDP'].errors?.required">This field is mandatory.</mat-error>
+                    <mat-error *ngIf="service.form.controls['noActiveDP'].errors?.pattern">Only numbers are allowed</mat-error>
+                </mat-form-field>
+                <mat-radio-group formControlName="subPlan">
+                        <mat-radio-button value="1">Basic</mat-radio-button>
+                        <mat-radio-button value="2">Pro</mat-radio-button>
+                        <mat-radio-button value="3">Enterprise</mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field appearance="fill">
+                    <mat-label>From Date</mat-label>
+                    <input formControlName="fromDate" matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>To date</mat-label>
+                    <input formControlName="toDate" matInput [matDatepicker]="picker1">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+        <div class = "button-row">
+            <div class="center">
+                <button mat-raised-button color="primary" type="submit">Submit</button>
+                <button mat-raised-button color="primary" (click)="onClear()">Clear</button>
+            </div>
+        </div>
+</form>

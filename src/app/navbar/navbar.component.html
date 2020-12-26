@@ -1,0 +1,189 @@
+<header>
+    <div class="tophead">
+
+        <div class="hamburger topheaditem">
+            <span class="menulines" (click)="openNav()">&#9776;</span>
+        </div>
+        <div class="brandlogo topheaditem">
+            InsiderLens
+        </div>
+        <div class="userlogo topheaditem" (click)="openUser()">
+            <i class="fas fa-user"></i>
+        </div>
+        
+    </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+
+    <ul>
+        <a href="javascript:void(0)" class="closeBtn" (click)="closeNav()">&times;</a>
+        <li><a routerLink="/#" id="show_user_management" (click)="show_user_management()" >User Management <i class="fas fa-caret-down"></i></a>
+            <ul    id="user_management_show">
+                <li><a routerLink="/#">View </a></li>
+                <li><a routerLink="/#">Add </a></li>
+                <li><a routerLink="/#">Bulk Upload</a></li>
+            </ul>
+        </li>
+        <li><a routerLink="/#">Company Details </a></li>
+
+        <li><a routerLink="/#" id="show_data_definition"  (click)="show_data_definition()">Data Definition <i class="fas fa-caret-down"></i></a>
+            <ul  id="data_definition_show">
+                <li><a routerLink="/#" id="show_id_info" (click)="show_id_info()">Id Information <i class="fas fa-caret-down"></i></a>
+                    <ul id="id_info_show">
+                        <li><a routerLink="/#">View</a></li>
+                        <li><a routerLink="/#">Add</a></li>
+                    </ul>
+                </li>
+                <li><a routerLink="/#" id="show_security_details" (click)="show_security_details()" >Security(ISIN) Details<i class="fas fa-caret-down"></i></a>
+                    <ul id="security_details_show">
+                        <li><a routerLink="/#">View</a></li>
+                        <li><a routerLink="/#">Add</a></li>
+                    </ul>
+                </li>
+                <li><a routerLink="/#" id="show_upsi_category" (click)="show_upsi_category()">UPSI Category <i class="fas fa-caret-down"></i></a>
+                    <ul id="upsi_category_show">
+                        <li><a routerLink="/#">View</a></li>
+                        <li><a routerLink="/#">Add</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_designated_person" (click)="show_designated_person()">Designated Person <i class="fas fa-caret-down"></i></a>
+            <ul  id="designated_person_show">
+                <li><a routerLink="/#">View</a></li>
+
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_connected_person" (click)="show_connected_person()">Connected Person <i class="fas fa-caret-down"></i></a>
+            <ul  id="connected_person_show">
+                <li><a routerLink="/#">View</a></li>
+                <li><a routerLink="/#">Other Entities(OE)</a></li>
+                <li><a routerLink="/#">Immediate Relatives(IR)</a></li>
+                <li><a routerLink="/#">Material Financial Relationdhip(MFR)
+                     <span>Material Financial Relationdhip(MFR)</span>
+                </a></li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_holdings_disclosure" (click)="show_holdings_disclosure()">Holdings Disclosure <i class="fas fa-caret-down"></i></a>
+            <ul  id="holdings_disclosure_show">
+                <li><a routerLink="/#">View</a></li>
+                <li><a routerLink="/#">Add for Self/CP</a></li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_preclearance_request" (click)="show_preclearance_request()">Pre-clearance Request<i class="fas fa-caret-down"></i></a>
+            <ul  id="preclearance_request_show">
+                <li><a routerLink="/#">Approval</a></li>
+                <li><a routerLink="/#">View</a></li>
+                <li><a routerLink="/#">Add</a></li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_pledge_holding_details" (click)="show_pledge_holding_details()">Pledge/Holding Details <i class="fas fa-caret-down"></i></a>
+            <ul  id="pledge_holding_details_show">
+                <li><a routerLink="/#">View</a></li>
+                <li><a routerLink="/#">Add</a></li>
+            </ul>
+        </li>
+
+        <li><a routerLink="/#" id="show_reports" (click)="show_reports()"><i class="far fa-file-alt"> </i>&nbsp; Reports <i class="fas fa-caret-down"></i></a>
+            <ul  id="reports_show">
+                <li><a routerLink="/#">Designated and Connected Person Report <span>Designated and Connected Person Report</span> </a>
+                     
+                </li>
+                <li><a routerLink="/#">Changes in Holdings</a></li>
+                <li><a routerLink="/#">Periodical Disclosure</a></li>
+
+                <li><a routerLink="/#">Detailed Holding Reports</a></li>
+                <li><a routerLink="/#">UPSI Shared Report</a></li>
+                <li><a routerLink="/#" id="show_deviation_reports" (click)="show_deviation_reports()">Deviation Reports <i class="fas fa-caret-down"></i></a>
+                    <ul id="deviation_reports_show">
+                        <li><a routerLink="/#">Trade Information vs Benpos</a></li>
+                        <li><a routerLink="/#">Preclearance Voilation</a></li>
+                        <li><a routerLink="/#">Contra Trade</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_intimation_of_trades" (click)="show_intimation_of_trades()">Intimation of Trades<i class="fas fa-caret-down"></i></a>
+            <ul id="intimation_of_trades_show">
+                <li><a routerLink="/#">View</a></li>
+                <li><a routerLink="/#">Add</a></li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_upload_bepons" (click)="show_upload_bepons()">Upload Bepons(Weekly)<i class="fas fa-caret-down"></i></a>
+            <ul id="upload_bepons_show">
+                <li><a routerLink="/#">View</a></li>
+                <li><a routerLink="/#">Add</a></li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_upsi_shared_details" (click)="show_upsi_shared_details()">UPSI Shared Details <i class="fas fa-caret-down"></i></a>
+            <ul id="upsi_shared_details_show">
+                <li><a routerLink="/#">View</a></li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_trading_window_closures" (click)="show_trading_window_closures()">Trading Window Closures <i class="fas fa-caret-down"></i></a>
+            <ul id="trading_window_closures_show">
+                <li><a routerLink="/#">View</a></li>
+                <li><a routerLink="/#">Add</a></li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_reference_documents" (click)="show_reference_documents()">Reference Documents<i class="fas fa-caret-down"></i></a>
+            <ul id="reference_documents_show">
+                <li><a routerLink="/#">View</a></li>
+                <li><a routerLink="/#">Add</a></li>
+            </ul>
+        </li>
+        <li><a routerLink="/#" id="show_sent_mails" (click)="show_sent_mails()">Sent Mails <i class="fas fa-caret-down"></i></a>
+            <ul id="sent_mails_show">
+                <li><a routerLink="/#">View</a></li>
+            </ul>
+        </li>
+
+        <li><a routerLink="/#">User Manual</a></li>
+        <li><a routerLink="/#">License Agreement</a></li>
+        <li><a routerLink="/#">Renewal</a></li>
+
+
+    </ul>
+</nav>
+
+<div class="userInfo" id="userInformation">
+    <a href="javascript:void(0)" class="closeUser" (click)="closeUser()">&times;</a>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
+        alt="user image">
+    <p>User : {{username}}</p>
+    <button (click)="logout_clicked()">Logout</button>
+</div>
+<br>
+<br>
+
+  
+  <h2 style="text-align:center"></h2>
+  <div class="row">
+    <div class="column1 column">
+      <div class="card">
+        <img src="../../assets/Img/undraw_data_processing_yrrv.svg" alt="Jane" style="width:100%">
+        <div class="container">
+          <br>
+          <br>
+          <br>
+          <h2>Client Master Form.</h2>
+          <p>Some text that describes Client Master Form idea.</p>
+          <p><button class="button" routerLink="/clients">Go</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column2 column">
+      <div class="card">
+        <img src="../../assets/Img/undraw_server_cluster_jwwq.svg" alt="Mike" style="width:100%">
+        <div class="container">
+          <br>
+          <h2>Subscription Form.</h2>
+          <p>Some text that describes Subscription form idea.</p>
+          <p><button class="button" (click)="button_subscription()">Go</button></p>
+        </div>
+      </div>
+    </div>
+  
+  </div>

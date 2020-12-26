@@ -1,0 +1,36 @@
+<img class="wave" src="../../assets/Img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="../../assets/Img/undraw_Online_collaboration_re_bkpm.svg">
+		</div>
+		<div class="login-content">
+			<form >
+				<img src="../../assets/Img/axar-logo1.png">
+				<h2 class="title">Welcome To Insiderlens</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" [value]='username' (input)='username=$event.target.value' name="username" id="username"  class="input" >
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+					<i class="fas fa-user-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+						   <input type="password" [value]='password' (input)='password=$event.target.value' name="password" id="password" class="input">			
+            	   </div>
+            	</div>
+            	<a routerLink="/">Forgot Password?</a>
+				<button  class="btn"   (click)="btn_clicked()" value="Login">Login</button>
+				<h5>© Axar Digital Services Private Limited.</h5>
+				<h5>(Enterprise - Ver 1.0.3)</h5>
+            </form>
+        </div>
+    </div>
+
+    

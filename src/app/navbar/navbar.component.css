@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+
+
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+    color: #fff;
+}
+
+
+.tophead{
+    width: 100%;
+    height: 60px;
+    background-color:#6C63FF;
+    color: #fff;
+    font-size: 2.0rem;
+}
+
+.topheaditem{
+    display: inline-block;
+    margin-left: 1%;
+    padding-top: 0.5%;
+}
+
+.hamburger{
+    width: 5%;
+    cursor: pointer;
+}
+
+.brandlogo{
+    width: 70%;
+    align-items: center;
+    text-align: center;
+    margin-left: 120px ;
+}
+
+.userlogo{
+    width: 5%;
+    float: right;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+.show{
+    display: block !important;
+    
+}
+
+.select .fa-caret-down{
+    transform: translateY(-50%)rotate(-180deg) !important;
+}
+
+
+
+.sidebar{
+    padding-top: 40px;
+    z-index: 5;
+    position: fixed;
+    width: 0px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #272634;
+    transition: 0.5s;
+}
+
+.closeBtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 35px!important;
+}
+
+nav ul a{
+    text-decoration: none;
+}
+
+nav ul{
+    /* background-color: red; */
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+   
+}
+
+
+nav ul::-webkit-scrollbar{
+    width: 10px;
+}
+
+nav ul::-webkit-scrollbar-track{
+    background-color: #666;
+    border-radius: 5px;
+}
+
+nav ul::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #333;
+}
+
+
+nav ul li{
+    position: relative;
+    line-height: 35px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav ul li a span{
+    position: absolute;
+    background-color: white;
+    color: black;
+    font-size: 14px !important;
+    top: 4px;
+    left: 10px;
+    /* width: 100%; */
+    padding: 3px;
+    visibility: hidden;
+    /* height: 33px; */
+    text-align: center;
+    transition: 0.1s;
+    box-shadow: 5px 5px 10px black;
+}
+
+nav ul li a:hover>span{
+    /* top: -10px; */
+    visibility: visible;
+}
+
+li a{
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* li a:hover{
+    overflow: visible;
+    white-space: normal;
+} */
+
+nav ul li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 16px;
+    padding-left: 20px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+
+nav ul li a:hover{
+    color: cyan;
+    background-color: #1e1e1e;
+    border-left-color: cyan;
+}
+
+nav ul ul{
+    position: static;
+   display: none;
+   transition: 0.5s;
+}
+
+nav ul ul ul{
+    position: static;
+    display: none;
+    transition: 0.5s;
+}
+
+/* #id_info_show, #security_details_show, #upsi_category_show, #deviation_reports_show{
+    display: none;
+} */
+
+
+nav ul ul li{
+    line-height: 42px;
+    /* border-bottom: 1px solid rgba(255,0,0,0.5); */
+}
+
+nav ul ul ul li{
+    line-height: 42px;
+    border-bottom: none;
+
+}
+
+
+nav ul ul li a{
+    font-size: 17px;
+    color: #e6e6e6;
+    padding-left: 60px;
+}
+
+nav ul ul li a:hover{
+    color: cyan;
+    background-color: #1e1e1e;
+    border-left-color:cyan;
+}
+
+nav ul ul ul li a{
+    font-size: 17px;
+    color: #e6e6e6;
+    padding-left: 100px;
+}
+
+nav ul ul ul li a:hover{
+    color: cyan;
+    background-color: #1e1e1e;
+    border-left-color: cyan;
+}
+
+
+
+.fa-caret-down{
+    position: absolute !important;
+    top: 50% !important ;
+    right: 20px !important;
+    transform: translateY(-50%) !important;
+    font-size: 22px !important;
+    transition: transform 0.4s !important;
+}
+
+/* nav ul li a:active .fa-caret-down{
+    transform: translateY(-50%)rotate(-180deg) !important;
+    
+} */
+
+/* nav ul li:hover ul{
+    display: block;
+   
+} */
+
+nav ul li:hover ul ul{
+    display: none;
+}
+
+/* nav ul li ul li:hover ul{
+    display: block;
+    
+} */
+
+.userInfo img{
+    height: 25px;
+    width: 25px;
+}
+
+.userInfo{
+    position: fixed;
+    top: 64px;
+    right: 10px;
+    background-color: rgba(0,0,0,0.4);
+    width: 0;
+    color: #272634;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+    height: 75px;
+    box-shadow: 3px 3px 10px  rgba(0,0,0,0.2);
+}
+.userInfo button{
+    width: 96%;
+    background-color: #5da1e6;
+    border: none;
+    margin: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.userInfo button:hover{
+    background-color: white;
+    color:red;
+}
+
+.userInfo a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.closeUser{
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+
+
+
+
+
+h1 {
+    font-size:xx-large;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column1 {
+    float: left;
+    width: 600px;
+    margin-bottom: 16px;
+    margin-left: 80px;
+    padding: 0 8px;
+  }
+  
+  .column2 {
+      float: left;
+      width: 600px;
+      margin-bottom: 16px;
+      margin-left: 150px;
+      padding: 0 8px;
+    }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .about-section {
+    padding: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #6C63FF;
+    color: white;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    color: #1e1e1e;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    font-size: large;
+    font-weight: 100;
+    background-color: #6C63FF;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  .container h2 {
+      color: #1e1e1e;
+  }
+
+  /* @media (max-width : 768px){
+    .tophead{
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    .row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .column{
+        margin: auto;
+    }
+    .about-section{
+        width: 100%;
+    }
+} */
+  
+  /* @media screen and (max-width: 650px) {
+      .row{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
+    
+  } */

@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+div.container{
+    margin: 0px 40px;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+    }
+
+    form.normal-form{
+    margin: 10px;
+}
+
+.controles-container{
+    
+    width: 50%;
+    padding: 5px;
+   
+}
+
+.controles-container > * {
+    width: 100%;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+.button-row button{
+    margin: 5px;
+}
+
+/*Snack Bar notification*/
+snack-bar-container.success {
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+snack-bar-container.warn {
+    background-color: #f99157;
+    color: #fff;
+}
+
+snack-bar-container.notification simple-snack-bar{
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.hide {
+        display: none;
+}

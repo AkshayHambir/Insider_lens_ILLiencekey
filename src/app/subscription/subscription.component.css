@@ -1,0 +1,10 @@
+mat-toolbar.subscriptionToolbar {
+    background-color:#6C63FF;
+    color: #fff;
+}
+
+/* radio group */
+mat-radio-group mat-radio-button{
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
