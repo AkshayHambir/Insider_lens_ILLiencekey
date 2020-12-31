@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
 
    openNav = () =>{
-    document.getElementById("sidebar").style.width = "300px";
+    document.getElementById("sidebar").style.width = "350px";
 }
 
  closeNav = () =>{
@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
 }
 
  openUser = () =>{
-    document.getElementById("userInformation").style.width = "350px";
+    document.getElementById("userInformation").style.width = "300px";
 
 }
 
