@@ -246,25 +246,53 @@ nav ul li:hover ul ul{
     
 } */
 
-.userInfo img{
-    height: 25px;
-    width: 25px;
+.user{
+    display: flex;
+    width: 250px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.userInfo .user_img{
+    display:inline-block;
+    margin: 2px;
+    border: 1px solid #272634;
+    height: 55px;
+    margin-top: 12px;
+    margin-right: 12px;
+    border-radius: 35px;
+}
+
+.user_img img{
+    height: 50px;
+    width: 50px;
+    margin-top: 2px;
 }
 
 .userInfo{
     position: fixed;
     top: 64px;
     right: 10px;
-    background-color: rgba(0,0,0,0.4);
+    background-color:#16213e;
     width: 0;
     color: #272634;
     z-index: 1;
     overflow-x: hidden;
     overflow-y: hidden;
     transition: 0.5s;
-    height: 75px;
+    height: 80px;
+    border-radius: 5px;
     box-shadow: 3px 3px 10px  rgba(0,0,0,0.2);
 }
+
+.userInfo .user_detail{
+    display: inline-block;
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+
 .userInfo button{
     width: 96%;
     background-color: #5da1e6;

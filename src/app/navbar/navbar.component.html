@@ -149,10 +149,17 @@
 
 <div class="userInfo" id="userInformation">
     <a href="javascript:void(0)" class="closeUser" (click)="closeUser()">&times;</a>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-        alt="user image">
-    <p>User : {{username}}</p>
-    <button (click)="logout_clicked()">Logout</button>
+    <div class="user">
+        <div class="user_img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
+            alt="user image">
+        </div>
+        <div class="user_detail">
+            <h4>FirstName Lastname</h4>
+            <h5>username</h5>
+            <button (click)="logout_clicked()">Logout</button>
+        </div>
+    </div> 
 </div>
 <br>
 <br>

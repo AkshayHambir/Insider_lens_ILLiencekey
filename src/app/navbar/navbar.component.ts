@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
 
    openNav = () =>{
-    document.getElementById("sidebar").style.width = "350px";
+    document.getElementById("sidebar").style.width = "300px";
 }
 
  closeNav = () =>{
