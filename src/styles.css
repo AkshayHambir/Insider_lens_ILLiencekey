@@ -61,3 +61,5 @@ snack-bar-container.notification simple-snack-bar{
 .hide {
         display: none;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
