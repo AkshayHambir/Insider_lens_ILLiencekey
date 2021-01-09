@@ -8,3 +8,9 @@ mat-radio-group mat-radio-button{
     padding-bottom: 10px;
     margin-left: 10px;
 }
+
+label {
+    text-shadow: 5%;
+    font-weight: bold;
+    font-size: 15px;
+}

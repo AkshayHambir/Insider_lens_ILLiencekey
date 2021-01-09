@@ -12,6 +12,7 @@ import { ClientsComponent } from './clients/clients.component';
 import { ClientComponent } from './clients/client/client.component';
 import { ClientListComponent } from './clients/client-list/client-list.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
+import { MainclientsubComponent } from './mainclientsub/mainclientsub.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { SubscriptionComponent } from './subscription/subscription.component';
     ClientsComponent,
     ClientComponent,
     ClientListComponent,
-    SubscriptionComponent
+    SubscriptionComponent,
+    MainclientsubComponent
   ],
   imports: [
     BrowserModule,

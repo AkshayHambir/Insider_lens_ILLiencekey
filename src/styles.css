@@ -16,18 +16,17 @@ div.container{
     }
 
     form.normal-form{
-    margin: 10px;
+    margin: 5px;
 }
 
 .controles-container{
-    
     width: 50%;
-    padding: 5px;
-   
+    margin-bottom: 20px;
 }
 
 .controles-container > * {
     width: 100%;
+    margin:5px 0;
 }
 
 .center {

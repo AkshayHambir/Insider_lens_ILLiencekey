@@ -5,15 +5,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { ClientsComponent } from './clients/clients.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
-
-
+import { MainclientsubComponent } from './mainclientsub/mainclientsub.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   {path:'main',component:LoginComponent},
   {path:'navbar',component:NavbarComponent},
   {path:'clients',component:ClientsComponent},
-  {path:'subscription',component:SubscriptionComponent}
+  {path:'subscription',component:SubscriptionComponent},
+  {path:'mainmenu',component:MainclientsubComponent}
 ];
 
 @NgModule({

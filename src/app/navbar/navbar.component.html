@@ -19,12 +19,12 @@
     <ul>
         <a href="javascript:void(0)" class="closeBtn" (click)="closeNav()">&times;</a>
 
-        <li><a routerLink="/#"><i class="fas fa-tachometer-alt"></i>&nbsp; Main-Menu </a></li>
+        <li><a routerLink="/mainmenu"><i class="fas fa-tachometer-alt"></i>&nbsp; Main-Menu </a></li>
 
         <li><a routerLink="/#" id="show_user_management" (click)="show_user_management()"><i class="fas fa-address-book"> </i>&nbsp; Client Master Form <i
                     class="fas fa-caret-down"></i></a>
             <ul id="user_management_show">
-                <li><a routerLink="/#"><i class="far fa-eye"></i>&nbsp;View </a></li>
+                <li><a routerLink="/clients"><i class="far fa-eye"></i>&nbsp;View </a></li>
                 <li><a routerLink="/#"><i class="fas fa-pen"></i>&nbsp;Add </a></li>
                 <li><a routerLink="/#"><i class="fas fa-plus"></i>&nbsp;Bulk Upload</a></li>
             </ul>
@@ -36,8 +36,7 @@
                 <li><a routerLink="/#" id="show_id_info" (click)="show_id_info()"><i class="fas fa-folder-plus"></i>&nbsp;New <i
                             class="fas fa-caret-down"></i></a>
                     <ul id="id_info_show">
-                        <li><a routerLink="/#"><i class="far fa-eye"></i>&nbsp;View</a></li>
-                        <li><a routerLink="/#"(click)="button_subscription()"><i class="fas fa-pen"></i>&nbsp;Add</a></li>
+                        <li><a routerLink="/subscription"(click)="button_subscription()"><i class="fas fa-pen"></i>&nbsp;Add</a></li>
                         <li><a routerLink="/#"><i class="fas fa-plus"></i>&nbsp;Bulk Upload</a></li>
                     </ul>
                 </li>
@@ -202,5 +201,3 @@
         </div>
     </div> 
 </div>
-<br>
-<br>

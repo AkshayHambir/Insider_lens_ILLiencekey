@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "axar-digital": {
+      "hosting": {
+        "internship": [
+          "axar-digital"
+        ]
+      }
+    }
+  }
+}

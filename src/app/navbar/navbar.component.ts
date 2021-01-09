@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-
+import { ClientComponent } from '../clients/client/client.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog'
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,7 +10,9 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, 
+                private router: Router,
+                private dialog: MatDialog) { }
  username = sessionStorage.getItem('user');
   ngOnInit(): void {
      
@@ -164,4 +167,11 @@ button_subscription=()=>{
     this.router.navigateByUrl("/subscription");
 }
 
+onCreate() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(ClientComponent,dialogConfig);
+  }
 }

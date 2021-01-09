@@ -11,19 +11,22 @@
         <mat-grid-tile>
             <div class="controles-container">
                 <input type="hidden" formControlName="$key">
-                <mat-form-field>
-                    <mat-select formControlName="clientNamesub" placeholder="Client Name*">
+                <label>Client Name</label>
+                <mat-form-field appearance="fill" floatControl="never">
+                    <mat-select formControlName="clientNamesub" placeholder="Select a Client">
                       <mat-option>None</mat-option>
                       <ng-container *ngFor="let clientNamesub of clientsName">
                         <mat-option value="{{clientNamesub.id}}">{{clientNamesub.value}}</mat-option>
                       </ng-container>
                     </mat-select>
                 </mat-form-field>
-                <mat-form-field>
-                    <input formControlName="noActiveDP" matInput placeholder="Number of Active DP *" value="0">
+                <label>Number of Active DP *</label>
+                <mat-form-field appearance="fill" floatControl="never">
+                    <input formControlName="noActiveDP" matInput placeholder="Enter a number" value="0">
                     <mat-error *ngIf="service.form.controls['noActiveDP'].errors?.required">This field is mandatory.</mat-error>
                     <mat-error *ngIf="service.form.controls['noActiveDP'].errors?.pattern">Only numbers are allowed</mat-error>
                 </mat-form-field>
+                <label>Subscription Plan</label>
                 <mat-radio-group formControlName="subPlan">
                         <mat-radio-button value="1">Basic</mat-radio-button>
                         <mat-radio-button value="2">Pro</mat-radio-button>
