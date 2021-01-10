@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {Userlogin} from '../userlogin.model';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,7 @@ export class LoginComponent implements OnInit {
   password:string = "";
   // btn_disable:boolean = false;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router,private http:HttpClient) { }
 
   ngOnInit(): void {
 
@@ -53,6 +55,23 @@ export class LoginComponent implements OnInit {
   
 
  
+}
+
+loginClicked(form:NgForm){
+  const Username = form.value.Username;
+  const Password = form.value.Password;
+  
+  console.log(Username);
+  console.log(Password);
+
+  const login = {Username : Username , Password:Password}
+  console.log(login);
+
+  this.http.post<{[key:string]:Userlogin}>('http://demo.boardeye.com/ILLicenseKeyAPI/api/Users/LoginUser',login).subscribe(responseData=>{
+    console.log(responseData);
+  })
+
+  this.router.navigate(['/mainmenu']);
 }
 
  
