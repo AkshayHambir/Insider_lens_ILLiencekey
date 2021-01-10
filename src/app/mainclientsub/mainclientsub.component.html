@@ -2,11 +2,12 @@
 <div class="container">
     <mat-toolbar class="dashboardToolbar">
         <span class="fill-remaining-space"></span>
-        <span>Dashboard</span>
+        <span>Client Information</span>
         <span class="fill-remaining-space"></span>
     </mat-toolbar>
 
     <div class="search-div">
+        <i class="fas fa-search"></i>
         <mat-form-field class="search-form-field" floatLabel="never">
             <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
             <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (Click)="onSearchClear()">
@@ -54,10 +55,28 @@
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
             <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
-            <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+            <mat-footer-row *matFooterRowDef="['noData']"
+                [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
         </mat-table>
         <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
-    
+
     </div>
 
+</div>
+<style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-decoration: solid;
+        padding: 5px;
+        background-color: #6C63FF;
+        color: white;
+        text-align: center;
+    }
+</style>
+
+<div class="footer">
+    <p>© Axar Digital Services Private Limited.(Enterprise - Ver 1.0.3)</p>
 </div>
