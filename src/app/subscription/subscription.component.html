@@ -10,7 +10,7 @@
     <mat-grid-list cols="1" rowHeight="500px">
         <mat-grid-tile>
             <div class="controles-container">
-                <input type="hidden" formControlName="$key">
+                <input type="hidden" formControlName="$key" value="word.txt" id="name">
                 <label>Client Name</label>
                 <mat-form-field appearance="fill" floatControl="never">
                     <mat-select formControlName="clientNamesub" placeholder="Select a Client">
@@ -22,7 +22,7 @@
                 </mat-form-field>
                 <label>Number of Active DP *</label>
                 <mat-form-field appearance="fill" floatControl="never">
-                    <input formControlName="noActiveDP" matInput placeholder="Enter a number" value="0">
+                    <input formControlName="noActiveDP" matInput placeholder="Enter a number" value="word.txt" id="dp">
                     <mat-error *ngIf="service.form.controls['noActiveDP'].errors?.required">This field is mandatory.</mat-error>
                     <mat-error *ngIf="service.form.controls['noActiveDP'].errors?.pattern">Only numbers are allowed</mat-error>
                 </mat-form-field>
@@ -34,13 +34,13 @@
                 </mat-radio-group>
                 <mat-form-field appearance="fill">
                     <mat-label>From Date</mat-label>
-                    <input formControlName="fromDate" matInput [matDatepicker]="picker">
+                    <input formControlName="fromDate" matInput [matDatepicker]="picker" value="word.txt" id="sdate">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>To date</mat-label>
-                    <input formControlName="toDate" matInput [matDatepicker]="picker1">
+                    <input formControlName="toDate" matInput [matDatepicker]="picker1" value="word.text" id="edate">
                     <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                     <mat-datepicker #picker1></mat-datepicker>
                 </mat-form-field>
@@ -51,6 +51,31 @@
             <div class="center">
                 <button mat-raised-button color="primary" type="submit">Submit</button>
                 <button mat-raised-button color="primary" (click)="onClear()">Clear</button>
+                <button mat-raised-button color="primary" type="button" id="download-btn">Download</button>
             </div>
         </div>
+        <script>
+            function download(name, dp, sdate, edate, text) {
+                var element = document.createElement('a');
+                element.style.display = 'none';
+                //Define  the data of the file using encodeURIComponent
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text))
+                    ;
+                //add the download attribute of hidden link
+                element.setAttribute('download', name, dp, sdate, edate);
+                document.body.appendChild(element);
+                //simulate click of the created link 
+                element.click();
+                document.body.removeChild(element);
+            }
+            //When the user clicks the download button, start download
+            //Start file download.
+            document.getElementById("download-btn").addEventListener("click", function(){
+                var name = document.getElementById("name").value;
+                var activeDP = document.getElementById("dp").value;
+                var sdate = document.getElementById("sdate").value;
+                var edate = document.getElementById("edate").value;
+                download(name, activeDP, sdate, edate);
+            }, false);
+        </script>
 </form>

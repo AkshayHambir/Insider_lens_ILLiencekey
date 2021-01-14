@@ -61,14 +61,20 @@ loginClicked(form:NgForm){
   const Username = form.value.Username;
   const Password = form.value.Password;
   
-  console.log(Username);
-  console.log(Password);
+  // console.log(Username);
+  // console.log(Password);
 
   const login = {Username : Username , Password:Password}
-  console.log(login);
+  // console.log(login);
 
   this.http.post<{[key:string]:Userlogin}>('http://demo.boardeye.com/ILLicenseKeyAPI/api/Users/LoginUser',login).subscribe(responseData=>{
     console.log(responseData);
+    sessionStorage.setItem('user', JSON.stringify(responseData));
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    console.log(user); 
+    sessionStorage.setItem('firstname', user.firstName);
+    sessionStorage.setItem('lastname', user.lastName);
+    sessionStorage.setItem('username', user.username);
   })
 
   this.router.navigate(['/mainmenu']);
