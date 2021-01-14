@@ -17,6 +17,7 @@
     background-color:#6C63FF;
     color: #fff;
     font-size: 2.0rem;
+    text-align: left; 
 }
 
 .topheaditem{
@@ -302,9 +303,9 @@ nav ul li:hover ul ul{
 }
 
 .userInfo button{
-    width: 96%;
-    background-color: #5da1e6;
+    width: 100%;
     border: none;
+    background-color: #296be4;
     margin: 3px;
     border-radius: 3px;
     cursor: pointer;

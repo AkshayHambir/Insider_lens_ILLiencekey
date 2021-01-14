@@ -14,8 +14,13 @@ mat-form-field {
 	align-items: center;
 }
 
+mat-header-cell {
+    font-weight: bolder;
+    font-size: 4mm;
+}
 
 *{
     padding: 0%;
     margin: 0;
 }
+
