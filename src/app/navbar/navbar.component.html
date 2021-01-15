@@ -22,14 +22,12 @@
     <ul>
         <a href="javascript:void(0)" class="closeBtn" (click)="closeNav()">&times;</a>
 
-        <li><a routerLink="/mainmenu"><i class="fas fa-tachometer-alt"></i>&nbsp; Main-Menu </a></li>
+        <li><a routerLink="/mainmenu"><i class="fas fa-tachometer-alt"></i>&nbsp; Main-Menu</a></li>
 
         <li><a routerLink="/#" id="show_user_management" (click)="show_user_management()"><i
-                    class="fas fa-address-book"> </i>&nbsp; Client Master Form <i class="fas fa-caret-down"></i></a>
+                    class="fas fa-address-book"> </i>&nbsp; Client Master Form<i class="fas fa-caret-down"></i></a>
             <ul id="user_management_show">
-                <li><a routerLink="/clients"><i class="far fa-eye"></i>&nbsp;View </a></li>
-                <li><a routerLink="/#"><i class="fas fa-pen"></i>&nbsp;Add </a></li>
-                <li><a routerLink="/#"><i class="fas fa-plus"></i>&nbsp;Bulk Upload</a></li>
+                <li><a routerLink="/clients"><i class="fas fa-user-plus"></i>&nbsp; View & Add</a></li>
             </ul>
         </li>
 
@@ -37,21 +35,17 @@
                     class="fas fa-address-card"></i>&nbsp; Subscription Form <i class="fas fa-caret-down"></i></a>
             <ul id="data_definition_show">
                 <li><a routerLink="/#" id="show_id_info" (click)="show_id_info()"><i
-                            class="fas fa-folder-plus"></i>&nbsp;New <i class="fas fa-caret-down"></i></a>
+                            class="fas fa-folder-plus"></i>&nbsp; New<i class="fas fa-caret-down"></i></a>
                     <ul id="id_info_show">
                         <li><a routerLink="/subscription" (click)="button_subscription()"><i
-                                    class="fas fa-pen"></i>&nbsp;Add</a></li>
-                        <li><a routerLink="/#"><i class="fas fa-plus"></i>&nbsp;Bulk Upload</a></li>
+                                    class="fas fa-plus"></i>&nbsp; Add</a></li>
                     </ul>
                 </li>
             </ul>
         </li>
 
         <li><a routerLink="/#" id="show_designated_person" (click)="show_designated_person()"><i
-                    class="fas fa-users"></i>&nbsp; User-Manual </a>
-            <ul id="designated_person_show"> ]
-
-            </ul>
+                    class="fas fa-users"></i>&nbsp; User-Manual</a>
         </li>
     </ul>
 </nav>
@@ -205,5 +199,5 @@
             <button type="button" class="btn btn-primary" (click)="logout_clicked()">Logout</button>
         </div>
     </div>
-    
+
 </div>
