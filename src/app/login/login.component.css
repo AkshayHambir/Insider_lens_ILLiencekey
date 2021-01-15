@@ -158,6 +158,14 @@ form{
 	margin-bottom: 4px;
 }
 
+input.ng-invalid.ng-touched{
+	border-color: red;
+}
+
+.div p{
+	color: red;
+}
+
 a{
 	display: block;
 	text-align: right;

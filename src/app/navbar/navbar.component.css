@@ -271,7 +271,7 @@ nav ul li:hover ul ul{
     margin-top: 2px;
 }
 
-.userInfo{
+#userInformation{
     position: fixed;
     top: 64px;
     right: 10px;

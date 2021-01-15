@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Injectable } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {Userlogin} from '../userlogin.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -69,12 +70,21 @@ loginClicked(form:NgForm){
 
   this.http.post<{[key:string]:Userlogin}>('http://demo.boardeye.com/ILLicenseKeyAPI/api/Users/LoginUser',login).subscribe(responseData=>{
     console.log(responseData);
+    if(responseData.hasOwnProperty){
     sessionStorage.setItem('user', JSON.stringify(responseData));
     const user = JSON.parse(sessionStorage.getItem('user'));
     console.log(user); 
     sessionStorage.setItem('firstname', user.firstName);
     sessionStorage.setItem('lastname', user.lastName);
     sessionStorage.setItem('username', user.username);
+    }
+    else{
+      Swal.fire(
+        'Login Failed!',
+        'User credentials are invalid!',
+        'success'
+      )
+    }
   })
 
   this.router.navigate(['/mainmenu']);

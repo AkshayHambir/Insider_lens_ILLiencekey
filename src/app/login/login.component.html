@@ -14,7 +14,9 @@
            		   </div>
            		   <div class="div form-group">
            		   		<h5>Username</h5>
-           		   		<input type="text"  name="Username" ngModel id="username"  class="input form-control" >
+							<input type="text"  name="Username" ngModel id="username"  class="input form-control" #username="ngModel" required >
+							<p *ngIf="username.touched && !username.valid">Please Enter Username</p>
+							  
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -23,12 +25,13 @@
            		   </div>
            		   <div class="div form-group">
            		    	<h5>Password</h5>
-						   <input type="password" name="Password" ngModel  id="password" class="input form-control">			
+						   <input type="password" name="Password" ngModel  id="password" class="input form-control" #password="ngModel" required>
+						   <p *ngIf="password.touched && !password.valid">Please Enter Password</p>			
             	   </div>
             	</div>
 				<a routerLink="/">Forgot Password?</a>
 				<div class="form-group">
-				<button  class="btn">Login</button>
+				<button  class="btn" [disabled]="!loginForm.valid">Login</button>
 			    </div >
             </form>
 		</div>

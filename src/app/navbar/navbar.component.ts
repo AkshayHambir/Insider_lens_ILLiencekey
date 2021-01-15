@@ -11,17 +11,22 @@ import Swal from 'sweetalert2';
 })
 export class NavbarComponent implements OnInit {
 
+  
 
     constructor(private route: ActivatedRoute,
         private router: Router,
         private dialog: MatDialog) { }
 
-    firstname = sessionStorage.getItem('firstname');
-    lastname = sessionStorage.getItem('lastname');
-    username = sessionStorage.getItem('username');
+        firstname:string = "";
+        lastname:string = "";
+        username:string = "";
+  
 
     ngOnInit(): void {
-
+        document.getElementById("userInformation").style.width = "0px";
+        this.firstname = sessionStorage.getItem('firstname');
+        this.lastname = sessionStorage.getItem('lastname');
+        this.username = sessionStorage.getItem('username');
     }
 
     openNav = () => {
@@ -167,11 +172,11 @@ export class NavbarComponent implements OnInit {
             'You have logged out!',
             'success'
           )
-        let des = confirm("This action will cause you to logout and will take you to the login page again");
-        if (des == true) {
+        // let des = confirm("This action will cause you to logout and will take you to the login page again");
+        // if (des == true) {
             sessionStorage.clear();
             this.router.navigateByUrl("/");
-        }
+        // }
     }
 
     button_subscription = () => {
