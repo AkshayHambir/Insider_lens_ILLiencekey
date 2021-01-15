@@ -1,0 +1,28 @@
+.about-section {
+    padding: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #6C63FF;
+    color: white;
+  }
+  
+/* body {background: #ececec;} */
+.p1
+{
+  font-size: 30px;
+}
+h1, h2, h3, h4, h5 {
+  border-bottom: 1px solid #ccc;
+  color: #000;
+  padding-bottom: 8px
+}
+.container {
+  margin: auto;
+  width: 350px;
+  text-align: center;
+}
+.listFlex {display: flex; justify-content: center;}
+img{
+  margin-bottom: 10px;
+}
