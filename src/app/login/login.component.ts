@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {Userlogin} from '../userlogin.model';
+import {ApiServiceService} from '../shared/api-service.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   password:string = "";
   // btn_disable:boolean = false;
 
-  constructor(private route: ActivatedRoute, private router: Router,private http:HttpClient) { }
+  constructor(private route: ActivatedRoute, private router: Router,private http:HttpClient,private apiser:ApiServiceService) { }
 
   ngOnInit(): void {
 
@@ -66,28 +67,41 @@ loginClicked(form:NgForm){
   // console.log(Password);
 
   const login = {Username : Username , Password:Password}
-  // console.log(login);
+  console.log(login);
 
-  this.http.post<{[key:string]:Userlogin}>('http://demo.boardeye.com/ILLicenseKeyAPI/api/Users/LoginUser',login).subscribe(responseData=>{
-    console.log(responseData);
-    if(responseData.hasOwnProperty){
-    sessionStorage.setItem('user', JSON.stringify(responseData));
-    const user = JSON.parse(sessionStorage.getItem('user'));
-    console.log(user); 
-    sessionStorage.setItem('firstname', user.firstName);
-    sessionStorage.setItem('lastname', user.lastName);
-    sessionStorage.setItem('username', user.username);
-    }
-    else{
-      Swal.fire(
-        'Login Failed!',
-        'User credentials are invalid!',
-        'success'
-      )
-    }
+  // this.http.post<{[key:string]:Userlogin}>('http://demo.boardeye.com/ILLicenseKeyAPI/api/Users/LoginUser',login).subscribe(responseData=>{
+  //   // console.log(responseData);
+  //   if(responseData.token){
+  //   sessionStorage.setItem('user', JSON.stringify(responseData));
+  //   const user = JSON.parse(sessionStorage.getItem('user'));
+  //   console.log(user); 
+  //   sessionStorage.setItem('firstname', user.firstName);
+  //   sessionStorage.setItem('lastname', user.lastName);
+  //   sessionStorage.setItem('username', user.username);
+  //   this.router.navigate(['/mainmenu']);
+  //   }
+  //   else{
+  //     alert("login failed");
+      
+  //   }
+  // })
+
+
+
+
+  this.apiser.loginUser(login).subscribe(responseData =>{
+      console.log(responseData);
+      sessionStorage.setItem('user', JSON.stringify(responseData));
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        console.log(user); 
+        sessionStorage.setItem('firstname', user.firstName);
+        sessionStorage.setItem('lastname', user.lastName);
+        sessionStorage.setItem('username', user.username);
+        this.router.navigate(['/mainmenu'])
+  },(error)=>{
+    console.log(error);
+    alert("Login Failed...!!! Invalid credentials");
   })
-
-  this.router.navigate(['/mainmenu']);
 }
 
  
