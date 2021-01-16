@@ -8,33 +8,33 @@
 			<form #loginForm="ngForm" (submit)="loginClicked(loginForm)">
 				<img src="../../assets/Img/axar-logo1.png">
 				<h2 class="title">Welcome To Insiderlens</h2>
-           		<div class="input-div one">
-           		   <div class="i">
-           		   		<i class="fas fa-user"></i>
-           		   </div>
-           		   <div class="div form-group">
-           		   		<h5>Username</h5>
-							<input type="text"  name="Username" ngModel id="username"  class="input form-control" #username="ngModel" required >
-							  
-           		   </div>
-           		</div>
-           		<div class="input-div pass">
-           		   <div class="i"> 
-					<i class="fas fa-user-lock"></i>
-           		   </div>
-           		   <div class="div form-group">
-           		    	<h5>Password</h5>
-						   <input type="password" name="Password" ngModel  id="password" class="input form-control" #password="ngModel" required>	
-            	   </div>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div form-group">
+						<h5>Username</h5>
+						<input type="text" name="Username" ngModel id="username" class="input form-control"
+							#username="ngModel" required>
 
-				      </div>
-            <br>
-            	</div>
+					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="i">
+						<i class="fas fa-user-lock"></i>
+					</div>
+					<div class="div form-group">
+						<h5>Password</h5>
+						<input type="password" name="Password" ngModel id="password" class="input form-control"
+							#password="ngModel" required>
+					</div>
 
+				</div>
+				<br>
 				<div class="form-group">
-				<button  class="btn" [disabled]="!loginForm.valid">Login</button>
-			    </div >
-            </form>
+					<button class="btn" [disabled]="!loginForm.valid">Login</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>
