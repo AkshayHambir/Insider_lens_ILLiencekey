@@ -1,16 +1,76 @@
-mat-toolbar.subscriptionToolbar {
+/* mat-toolbar.subscriptionToolbar {
     background-color:#6C63FF;
     color: #fff;
-}
+} */
 
-/* radio group */
+/* radio group
 mat-radio-group mat-radio-button{
     padding-bottom: 10px;
     margin-left: 10px;
-}
+} */
 
 label {
     text-shadow: 5%;
     font-weight: bold;
     font-size: 15px;
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+    font-weight: bold;
+}
+#fromDate, #toDate, #createdate{
+    padding: 10px;
+    border-radius: 4px;
+    font-size: larger;
+    font-weight: bold;
+}
+#clientname, #createdby{
+    width: 100%;
+    height: 35px;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: large;
+    font-weight: 100;
+}
+#subno{
+    width: 100%;
+    height: 35px;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: large;
+    font-weight: 100;
+}
+#subplan{
+    width: 100%;
+    height: 35px;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: large;
+    font-weight: 100;
+}
+.controles-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.button-row{
+    margin-top: 50px;
+}
+.container {
+    background-color:#6C63FF;
+    color: #fff;
+    height: 50px;
+}
+.container span{
+    text-align: center;
+    font-size: 28px;
+    padding: 15px;
+    display: block;
+    font-weight: 500;
 }
