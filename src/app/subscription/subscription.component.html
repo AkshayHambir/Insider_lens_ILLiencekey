@@ -1,60 +1,99 @@
 <app-navbar></app-navbar>
-<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()"> 
+<!-- <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">  -->
+<form #SubForm="ngForm" (submit)="onsubmit(SubForm)">
     <div class="container">
-        <mat-toolbar class="subscriptionToolbar">
+        <!-- <mat-toolbar class="subscriptionToolbar">
             <span class="fill-remaining-space"></span>
             <span>Subscription Form</span>
             <span class="fill-remaining-space"></span>
-        </mat-toolbar>
+        </mat-toolbar> -->
+        <span>Subscription Form</span>
     </div>
-    <mat-grid-list cols="1" rowHeight="500px">
-        <mat-grid-tile>
+    <br>
+    <br>
+    <!-- <mat-grid-list cols="1" rowHeight="500px">
+        <mat-grid-tile> -->
             <div class="controles-container">
                 <input type="hidden" formControlName="$key" value="word.txt" id="name">
-                <label>Client Name</label>
-                <mat-form-field appearance="fill" floatControl="never">
+                <label>Client Name:</label>
+                <!-- <mat-form-field appearance="fill" floatControl="never">
                     <mat-select formControlName="clientNamesub" placeholder="Select a Client">
                       <mat-option>None</mat-option>
                       <ng-container *ngFor="let clientNamesub of clientsName">
                         <mat-option value="{{clientNamesub.id}}">{{clientNamesub.value}}</mat-option>
                       </ng-container>
                     </mat-select>
-                </mat-form-field>
-                <label>Number of Active DP *</label>
-                <mat-form-field appearance="fill" floatControl="never">
+                </mat-form-field> -->
+                <span>
+                    <select name="" id="clientname" #ingre_qty>
+                        <ng-container *ngFor="let clientNamesub of clientsName">
+                            <option value="{{clientNamesub.id}}">{{clientNamesub.value}}</option>
+                        </ng-container>
+                    </select>
+                </span>
+                <label for="subno">Number of Active DP *:</label>
+                <!-- <mat-form-field appearance="fill" floatControl="never">
                     <input formControlName="noActiveDP" matInput placeholder="Enter a number" value="word.txt" id="dp">
                     <mat-error *ngIf="service.form.controls['noActiveDP'].errors?.required">This field is mandatory.</mat-error>
                     <mat-error *ngIf="service.form.controls['noActiveDP'].errors?.pattern">Only numbers are allowed</mat-error>
-                </mat-form-field>
-                <label>Subscription Plan</label>
-                <mat-radio-group formControlName="subPlan">
+                </mat-form-field> -->
+                <input type="number" number id="subno" name="activeDP" ngModel class="input form-control" #subno="ngModel" required>
+                <label for="subplan">Subscription Plan:</label>
+                <!-- <mat-radio-group formControlName="subPlan">
                         <mat-radio-button value="1">Basic</mat-radio-button>
                         <mat-radio-button value="2">Pro</mat-radio-button>
                         <mat-radio-button value="3">Enterprise</mat-radio-button>
-                </mat-radio-group>
-                <mat-form-field appearance="fill">
+                </mat-radio-group> -->
+                <span>
+                    <select name="" id="subplan" #in_qty>
+                        <option value="basic">Basic</option>
+                        <option value="pro">Pro</option>
+                        <option value="enterprise">Enterprise</option>
+                        <option value="test">Test</option>
+                    </select>
+                </span>
+                <!-- <mat-form-field appearance="fill">
                     <mat-label>From Date</mat-label>
-                    <input formControlName="fromDate" matInput [matDatepicker]="picker" value="word.txt" id="sdate">
+                    <input formControlName="fromDate" matInput [matDatepicker]="picker" id="sdate">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
+                </mat-form-field> -->
+                <label for="fromDate">From date:</label>
+                <input type="datetime-local" id="fromDate" name="fromDate" min="1980-01-01T00:00"
+                    max="2099-12-31T00:00" value="2020-06-12T19:30" class="input form-control" ngModel >
+                <!-- <mat-form-field appearance="fill">
                     <mat-label>To date</mat-label>
-                    <input formControlName="toDate" matInput [matDatepicker]="picker1" value="word.text" id="edate">
+                    <input formControlName="toDate" matInput [matDatepicker]="picker1" id="edate">
                     <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                     <mat-datepicker #picker1></mat-datepicker>
-                </mat-form-field>
+                </mat-form-field> -->
+                <label for="toDate">To date:</label>
+                <input type="datetime-local" id="toDate" name="toDate" min="2020-01-01T00:00" value="2020-06-12T19:30"
+                    max="2099-12-31T00:00" class="input form-control" ngModel >
+
+                <label>Created By:</label>
+                <span>
+                    <select name="" id="createdby" #i_qty>
+                        <ng-container *ngFor="let clientNamesub of createdby">
+                            <option value="{{clientNamesub.id}}">{{clientNamesub.value}}</option>
+                        </ng-container>
+                    </select>
+                </span>
+
+                <label for="createdate">Created On:</label>
+                <input type="datetime-local" id="createdate" name="createdate" min="2020-01-01T00:00" value="2020-06-12T19:30"
+                        max="2099-12-31T00:00" class="input form-control" ngModel >
             </div>
-        </mat-grid-tile>
-    </mat-grid-list>
-        <div class = "button-row">
-            <div class="center">
-                <button mat-raised-button color="primary" type="submit">Submit</button>
-                <button mat-raised-button color="primary" (click)="onClear()">Clear</button>
-                <button mat-raised-button color="primary" type="button" id="download-btn">Download</button>
-            </div>
+        <!-- </mat-grid-tile>
+    </mat-grid-list> -->
+    <div class="button-row">
+        <div class="center">
+            <button mat-raised-button color="primary" [disabled]="!SubForm.valid" type="submit">Submit</button>
+            <button mat-raised-button color="primary" (click)="onClear()">Clear</button>
+            <button mat-raised-button color="primary" type="button" id="download-btn">Download</button>
         </div>
-        <script>
+    </div>
+    <!-- <script>
             function download(name, dp, sdate, edate, text) {
                 var element = document.createElement('a');
                 element.style.display = 'none';
@@ -77,5 +116,5 @@
                 var edate = document.getElementById("edate").value;
                 download(name, activeDP, sdate, edate);
             }, false);
-        </script>
+        </script> -->
 </form>

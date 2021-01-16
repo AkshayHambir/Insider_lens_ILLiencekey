@@ -100,7 +100,11 @@ loginClicked(form:NgForm){
         this.router.navigate(['/mainmenu'])
   },(error)=>{
     console.log(error);
-    alert("Login Failed...!!! Invalid credentials");
+    Swal.fire({
+      icon: 'error',
+      title: 'Login Failed',
+      text: 'Invalid User Credentials',
+    })
   })
 }
 
@@ -120,20 +124,20 @@ loginClicked(form:NgForm){
   //   }
   
 
-  btn_clicked = () =>{
-    if(this.username!==""&&this.password!==""){
-    console.log(this.username);
-    sessionStorage.setItem('user',this.username);
-    console.log(this.password);
-    console.log(sessionStorage.getItem('user'));
-    this.router.navigateByUrl("/navbar");
-    }
-    else{
-      alert("Please enter login credentials");
-    }
+  // btn_clicked = () =>{
+  //   if(this.username!==""&&this.password!==""){
+  //   console.log(this.username);
+  //   sessionStorage.setItem('user',this.username);
+  //   console.log(this.password);
+  //   console.log(sessionStorage.getItem('user'));
+  //   this.router.navigateByUrl("/navbar");
+  //   }
+  //   else{
+  //     alert("Please enter login credentials");
+  //   }
     
    
-  }
+  // }
 
   // loginClicked(){
   //   const name = this.username;
