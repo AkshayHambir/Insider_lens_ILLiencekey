@@ -97,6 +97,7 @@ loginClicked(form:NgForm){
         sessionStorage.setItem('firstname', user.firstName);
         sessionStorage.setItem('lastname', user.lastName);
         sessionStorage.setItem('username', user.username);
+        sessionStorage.setItem('id',user.id);
         this.router.navigate(['/mainmenu'])
   },(error)=>{
     console.log(error);

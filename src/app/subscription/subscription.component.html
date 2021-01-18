@@ -70,19 +70,6 @@
                 <label for="toDate">To date:</label>
                 <input type="datetime-local" id="toDate" name="toDate" min="2020-01-01T00:00" value="2020-06-12T19:30"
                     max="2099-12-31T00:00" class="input form-control" ngModel >
-
-                <label>Created By:</label>
-                <span>
-                    <select name="" id="createdby" #i_qty>
-                        <ng-container *ngFor="let clientNamesub of createdby">
-                            <option value="{{clientNamesub.id}}">{{clientNamesub.value}}</option>
-                        </ng-container>
-                    </select>
-                </span>
-
-                <label for="createdate">Created On:</label>
-                <input type="datetime-local" id="createdate" name="createdate" min="2020-01-01T00:00" value="2020-06-12T19:30"
-                        max="2099-12-31T00:00" class="input form-control" ngModel >
             </div>
         <!-- </mat-grid-tile>
     </mat-grid-list> -->

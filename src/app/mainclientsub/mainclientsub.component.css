@@ -5,6 +5,7 @@ mat-form-field {
 .dashboardToolbar {
     background-color:#6C63FF;
     color: azure;
+    font-size: 30px;
 }
 
 .search-div{
@@ -24,3 +25,32 @@ mat-header-cell {
     margin: 0;
 }
 
+
+
+#customers {
+  border-collapse: collapse;
+  width: 1460px;
+}
+
+#customers td{
+  border: 1px solid #ddd;
+  padding: 8px;
+  height: 50px;
+  font-size: 15px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #6C63FF;
+  color: white;
+  border: 1px solid #ddd;
+  padding: 8px;
+  height: 50px;
+  font-size: 18px;
+}

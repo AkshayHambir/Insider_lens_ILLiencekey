@@ -16,7 +16,34 @@
         </mat-form-field>
     </div>
 
-    <div class="mat-elevation-z8">
+    <div class="table-div">
+    <table class="table table-bordered table-hover" id="customers">
+        <thead class="table-head">
+            <tr>
+                <th>smCmIdPkFk</th>
+                <th>smActiveDpcount</th>
+                <th>smCreatedBy</th>
+                <th>smCreatedOn</th>
+                <th>smFromDate</th>
+                <th>smSubscriptionPlan</th>
+                <th>smToDate</th>
+            </tr>
+        </thead>     
+            <tbody>
+                <tr  *ngFor="let i of SubDeatils; let m = index">
+                  
+                    <td>{{i.smCmIdPkFk}}</td>
+                    <td>{{i.smActiveDpcount}}</td>
+                    <td>{{i.smCreatedBy}}</td>
+                    <td>{{i.smCreatedOn}}</td>
+                    <td>{{i.smFromDate}}</td>
+                    <td>{{i.smSubscriptionPlan}}</td>
+                    <td>{{i.smToDate}}</td>
+                </tr>
+            </tbody>
+    </table>
+    </div>
+    <!-- <div class="mat-elevation-z8">
         <mat-table [dataSource]="listData" matSort>
             <ng-container matColumnDef="clientName">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Client Name</mat-header-cell>
@@ -58,9 +85,9 @@
             <mat-footer-row *matFooterRowDef="['noData']"
                 [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
         </mat-table>
-        <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
-
-    </div>
+        <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator> -->
+<!-- 
+    </div> -->
 
 </div>
 <style>

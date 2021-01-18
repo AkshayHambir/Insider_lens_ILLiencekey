@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SubscriptionService } from '../../app/shared/subscription.service';
 import { NotificationService } from '../../app/shared/notification.service';
+import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-subscription',
   templateUrl: './subscription.component.html',
@@ -10,20 +12,14 @@ import { NgForm } from '@angular/forms';
 export class SubscriptionComponent implements OnInit {
   @ViewChild('ingre_qty') ingre_qty : ElementRef;
   @ViewChild('in_qty') in_qty : ElementRef;
-  @ViewChild('i_qty') i_qty : ElementRef;
   constructor(public service: SubscriptionService,
-    private notificationService: NotificationService) { }
+    private notificationService: NotificationService, private http:HttpClient) { }
 
   clientsName = [
-      { id: 'Client-1', value: 'Client 1'},
-      { id: 'Client-2', value: 'Client 2'},
-      { id: 'Client-3', value: 'Client 3'},
+      { id: 1, value: 'Client 1'},
+      { id: 2, value: 'Client 2'},
+      { id: 3, value: 'Client 3'},
   ]
-  createdby = [
-    { id: 1, value: 'C1'},
-    { id: 2, value: 'C2'},
-    { id: 3, value: 'C3'},
-]
   ngOnInit(): void {
   }
 
@@ -33,6 +29,7 @@ export class SubscriptionComponent implements OnInit {
     
   }
   onsubmit(form:NgForm){
+
     const qty = this.ingre_qty.nativeElement.value;
     console.log(qty)
 
@@ -48,12 +45,32 @@ export class SubscriptionComponent implements OnInit {
     const toDate = form.value.toDate;
     console.log(toDate)
 
-    const i_qty = this.i_qty.nativeElement.value;
-    console.log(i_qty)
+    const currentdate = new Date().toISOString();
+    console.log(currentdate)
 
-    const createdate = form.value.createdate;
-    console.log(createdate)
+    const createdby = sessionStorage.getItem('id');
+    console.log(createdby)
+
+    const subform = {
+        "smCmIdPkFk": qty,
+        "smActiveDpcount": activeDP,
+        "smSubscriptionPlan": in_qty,
+        "smFromDate": fromDate,
+        "smToDate": toDate,
+        "smCreatedBy": createdby,
+        "smCreatedOn": currentdate
+    }
+    this.http .post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/PostSubscriptionDetails',subform).subscribe(responseData => {
+        console.log(responseData);
+        Swal.fire(
+          'Sumbited Successfully',
+          'New Subcription Added',
+          'success'
+        )
+      });
   }
+
+  
 
   // onSubmit() {
   //   if(this.service.form.valid == false) {
@@ -63,3 +80,18 @@ export class SubscriptionComponent implements OnInit {
   //   }
   // }
 }
+
+
+// URL- http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/PostSubscriptionDetails (POST)
+// Parameters- {
+       
+//         "smCmIdPkFk": 1,
+//         "smActiveDpcount": 1,
+//         "smSubscriptionPlan": "test",
+//         "smFromDate": "2019-03-04T12:58:35.653",
+//         "smToDate": "2019-03-04T12:58:35.653",
+//         "smCreatedBy": 1,
+//         "smCreatedOn": "2019-03-04T12:58:35.653"
+       
+//     }
+// Response-True
