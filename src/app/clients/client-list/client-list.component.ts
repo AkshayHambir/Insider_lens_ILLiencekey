@@ -6,43 +6,40 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog'
 import { ClientComponent } from '../client/client.component';
 import { ClientService } from '../../shared/client.service';
 import { NotificationService } from 'src/app/shared/notification.service';
-
-export interface PeriodicElement {
-  cinNo: string;
-  clientName: string;
-  coContactno: string;
-  coemail: string;
-  itContactno: string;
-  itemail: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {cinNo: '1', clientName: 'Hydrogen', coContactno: '1.0079',coemail:'ajsn@gmail.com', itContactno: '231',itemail: 'anhsa@gmail.com'},
-  {cinNo: '2', clientName: 'Helium', coContactno: '4.0026', coemail:'bas@gmail.com', itContactno: '56',itemail: 'nahn@gmail.com'},
-  
-];
+import { ClientList } from '../../api-model/allclient.model';
+import { ClientListService } from '../../shared/allclient.service';
+import { report } from 'process';
 
 @Component({
   selector: 'app-client-list',
   templateUrl: './client-list.component.html',
   styleUrls: ['./client-list.component.css']
 })
-export class ClientListComponent implements OnInit {
 
+export class ClientListComponent implements OnInit {
+ 
+  
   constructor(private dialog: MatDialog,
     private service: ClientService,
-    private notificationService: NotificationService) { }
-
-    listData = new MatTableDataSource(ELEMENT_DATA);
-  displayedColumns: string[] = ['cinNo','clientName','coContactno','coemail','itContactno','itemail','actions'];
-  @ViewChild(MatSort) sort!: MatSort ;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  searchKey!: string;
-  ngOnInit(): void {
-    this.listData;
-    this.listData.sort = this.sort;
+    private notificationService: NotificationService,
+    public allclientService: ClientListService) { }
+    ELEMENT_DATA: ClientList[]=[];
+    displayedColumns: string[] = ['cmCin','cmName','cmAddress','cmCocontactNo','cmCoemailId','cmItcontactNo','cmItemailId','cmCreatedBy','cmCreatedOn','actions'];
+    listData = new MatTableDataSource<ClientList>(this.ELEMENT_DATA);
+    @ViewChild(MatSort,{static: true}) sort: MatSort ;
+    @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+    searchKey: string;
+  ngOnInit() {
     this.listData.paginator = this.paginator;
+    this.listData.sort=this.sort;
+    this.getAllReports();
+    console.log(this.listData);
   }
+  public getAllReports() {
+    let resp = this.allclientService.getClientList();
+    resp.subscribe(report=>this.listData.data=report as ClientList[])
+  }
+    
 
   onSearchClear() {
     this.searchKey = "";
@@ -78,4 +75,6 @@ export class ClientListComponent implements OnInit {
       this.notificationService.warn('! Deleted Successfully');
     }
   }
+
+  
 }
