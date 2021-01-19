@@ -20,13 +20,13 @@
     <table class="table table-bordered table-hover" id="customers">
         <thead class="table-head">
             <tr>
-                <th>smCmIdPkFk</th>
-                <th>smActiveDpcount</th>
-                <th>smCreatedBy</th>
-                <th>smCreatedOn</th>
-                <th>smFromDate</th>
-                <th>smSubscriptionPlan</th>
-                <th>smToDate</th>
+                <th>CIN No.</th>
+                <th>Number Of Active DP</th>
+                <th>Subscription Plan</th>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th>Created On</th>
+                <th>Created By</th>
             </tr>
         </thead>     
             <tbody>
@@ -34,11 +34,11 @@
                   
                     <td>{{i.smCmIdPkFk}}</td>
                     <td>{{i.smActiveDpcount}}</td>
-                    <td>{{i.smCreatedBy}}</td>
-                    <td>{{i.smCreatedOn}}</td>
-                    <td>{{i.smFromDate}}</td>
                     <td>{{i.smSubscriptionPlan}}</td>
+                    <td>{{i.smFromDate}}</td>
                     <td>{{i.smToDate}}</td>
+                    <td>{{i.smCreatedOn}}</td>
+                    <td>{{i.smCreatedBy}}</td>
                 </tr>
             </tbody>
     </table>

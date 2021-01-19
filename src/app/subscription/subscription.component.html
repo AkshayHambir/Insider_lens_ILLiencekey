@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <!-- <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">  -->
-<form #SubForm="ngForm" (submit)="onsubmit(SubForm)">
+<form  #SubForm="ngForm" (submit)="onsubmit(SubForm)">
     <div class="container">
         <!-- <mat-toolbar class="subscriptionToolbar">
             <span class="fill-remaining-space"></span>
@@ -75,9 +75,7 @@
     </mat-grid-list> -->
     <div class="button-row">
         <div class="center">
-            <button mat-raised-button color="primary" [disabled]="!SubForm.valid" type="submit">Submit</button>
-            <button mat-raised-button color="primary" (click)="onClear()">Clear</button>
-            <button mat-raised-button color="primary" type="button" id="download-btn">Download</button>
+            <button mat-raised-button color="primary" id="SubSubmit" [disabled]="!SubForm.valid" type="submit">Submit</button>
         </div>
     </div>
     <!-- <script>
