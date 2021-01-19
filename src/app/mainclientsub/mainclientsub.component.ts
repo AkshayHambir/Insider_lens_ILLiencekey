@@ -4,34 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 // import { generateKeyPair } from 'crypto';
 import { HttpClient } from '@angular/common/http';
-
-export interface PeriodicElement {
-  cinNo: string;
-  clientName: string;
-  noActiveDP: string;
-  subPlan: string;
-  fromDate: string;
-  toDate: string;
-}
-
-// export interface SubForm {
-//   smActiveDpcount: number;
-//   smCmIdPkFk: number;
-//   smCmIdPkFkNavigation: number;
-//   smCreatedBy: number;
-//   smCreatedOn: string;
-//   smFromDate: string
-//   smIdPk: number
-//   smSubscriptionPlan: string
-//   smToDate: string
-// }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { cinNo: '1', clientName: 'Hydrogen', noActiveDP: '1', subPlan: 'Basic', fromDate: '12/01/2020', toDate: '3/07/2020' },
-  { cinNo: '2', clientName: 'Helium', noActiveDP: '4', subPlan: 'Premium', fromDate: '25/04/2020', toDate: '3/07/2020' },
-
-];
-
+import { ClientSubList } from '../api-model/dashboardclientsub.model';
+import { ClientSubListService } from '../shared/dashboardclientsub.service'
 // const SubDeatils: SubForm[] = [];
 
 @Component({
@@ -41,28 +15,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class MainclientsubComponent implements OnInit {
 
-  SubDeatils:any = [];
-  constructor(private http: HttpClient) { }
-
-  listData = new MatTableDataSource(ELEMENT_DATA);
-  displayedColumns: string[] = ['cinNo', 'clientName', 'noActiveDP', 'subPlan', 'fromDate', 'toDate'];
+  ELEMENT_DATA: ClientSubList[]=[];
+  constructor(private http: HttpClient,
+    public allclientsubService: ClientSubListService) { }
+  
+  listData = new MatTableDataSource(this.ELEMENT_DATA);
+  displayedColumns: string[] = ['smCmIdPkFk', 'smActiveDpcount', 'smSubscriptionPlan','smCreatedBy','smCreatedOn', 'smFromDate', 'smToDate'];
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   searchKey!: string;
-  ngOnInit(): void {
-    this.listData;
-    this.listData.sort = this.sort;
+  ngOnInit() {
     this.listData.paginator = this.paginator;
-
-    this.http.get("http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/GetAllSubscriptionDetails").subscribe(posts => {
-      console.log(posts);
-
-      this.SubDeatils = posts;
-      console.log(this.SubDeatils);
-    });
-
-
+    this.listData.sort=this.sort;
+    this.getAllReports();
+    console.log(this.listData);
   }
+  public getAllReports() {
+    let resp = this.allclientsubService.getClientSubList();
+    resp.subscribe(report=>this.listData.data=report as ClientSubList[])
+  }
+
   onSearchClear() {
     this.searchKey = "";
     this.applyFilter();
