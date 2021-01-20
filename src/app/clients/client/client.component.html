@@ -5,7 +5,7 @@
         <mat-icon>clear</mat-icon>
     </button>
 </mat-toolbar>
-<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()"> 
+<form #Clientform="ngForm" [formGroup]="service.form" class="normal-form" (submit)="onSubmit(Clientform.value)"> 
     <mat-grid-list cols="2" rowHeight="500px">
         <mat-grid-tile>
             <div class="controles-container">
