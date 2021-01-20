@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <!-- <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">  -->
 <form  #SubForm="ngForm" (submit)="onsubmit(SubForm)">
-    <div class="container">
+    <div class="container" id="sub-form">
         <!-- <mat-toolbar class="subscriptionToolbar">
             <span class="fill-remaining-space"></span>
             <span>Subscription Form</span>
@@ -14,7 +14,7 @@
     <!-- <mat-grid-list cols="1" rowHeight="500px">
         <mat-grid-tile> -->
             <div class="controles-container">
-                <input type="hidden" formControlName="$key" value="word.txt" id="name">
+                <input type="hidden" formControlName="$key">
                 <label>Client Name:</label>
                 <!-- <mat-form-field appearance="fill" floatControl="never">
                     <mat-select formControlName="clientNamesub" placeholder="Select a Client">

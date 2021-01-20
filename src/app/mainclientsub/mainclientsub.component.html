@@ -43,7 +43,7 @@
             </tbody>
     </table>
     </div> -->
-     <div class="mat-elevation-z8">
+     <div class="mat-elevation-z8" id="sub-table">
         <mat-table [dataSource]="listData" matSort>
             <ng-container matColumnDef="smCmIdPkFk">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>CIN No.</mat-header-cell>
@@ -90,7 +90,7 @@
             <mat-footer-row *matFooterRowDef="['noData']"
                 [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
         </mat-table>
-        <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator> -->
+        <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
 
     </div> 
 
