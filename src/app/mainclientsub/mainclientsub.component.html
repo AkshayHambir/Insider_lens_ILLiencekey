@@ -16,7 +16,7 @@
         </mat-form-field>
     </div>
 
-    <div class="table-div">
+    <!--<div class="table-div">
     <table class="table table-bordered table-hover" id="customers">
         <thead class="table-head">
             <tr>
@@ -42,32 +42,37 @@
                 </tr>
             </tbody>
     </table>
-    </div>
-    <!-- <div class="mat-elevation-z8">
+    </div> -->
+     <div class="mat-elevation-z8" id="sub-table">
         <mat-table [dataSource]="listData" matSort>
-            <ng-container matColumnDef="clientName">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Client Name</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.clientName}}</mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="cinNo">
+            <ng-container matColumnDef="smCmIdPkFk">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>CIN No.</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.cinNo}}</mat-cell>
+                <mat-cell *matCellDef="let element">{{element.smCmIdPkFk}}</mat-cell>
             </ng-container>
-            <ng-container matColumnDef="noActiveDP">
+            <ng-container matColumnDef="smActiveDpcount">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Number of Active DP</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.noActiveDP}}</mat-cell>
+                <mat-cell *matCellDef="let element">{{element.smActiveDpcount}}</mat-cell>
             </ng-container>
-            <ng-container matColumnDef="subPlan">
+            <ng-container matColumnDef="smSubscriptionPlan">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Subscription Plan</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.subPlan}}</mat-cell>
+                <mat-cell *matCellDef="let element">{{element.smSubscriptionPlan}}</mat-cell>
             </ng-container>
-            <ng-container matColumnDef="fromDate">
+            <ng-container matColumnDef="smCreatedBy">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Created By</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.smCreatedBy}}</mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="smCreatedOn">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Created On</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.smCreatedOn}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="smFromDate">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>From Date</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.fromDate}}</mat-cell>
+                <mat-cell *matCellDef="let element">{{element.smFromDate}}</mat-cell>
             </ng-container>
-            <ng-container matColumnDef="toDate">
+            <ng-container matColumnDef="smToDate">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>To Date</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.toDate}}</mat-cell>
+                <mat-cell *matCellDef="let element">{{element.smToDate}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="loading">
                 <mat-footer-cell *matFooterCellDef colspan="6">
@@ -85,9 +90,9 @@
             <mat-footer-row *matFooterRowDef="['noData']"
                 [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
         </mat-table>
-        <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator> -->
-<!-- 
-    </div> -->
+        <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+
+    </div> 
 
 </div>
 <style>

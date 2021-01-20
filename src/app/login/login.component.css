@@ -240,3 +240,10 @@ a:hover{
 		justify-content: center;
 	}
 }
+
+#login-img{
+	margin-left: 100px;
+}
+#login-form{
+	margin-left: 100px;
+}

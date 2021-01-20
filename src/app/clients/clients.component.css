@@ -7,3 +7,8 @@ mat-toolbar.clientToolbar {
     background-color:#6C63FF;
     color: #fff;
 }
+
+#client-form{
+    margin: auto;
+    width: 1460px;
+}

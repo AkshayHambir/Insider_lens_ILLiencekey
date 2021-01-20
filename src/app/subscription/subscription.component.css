@@ -74,3 +74,10 @@ label {
     display: block;
     font-weight: 500;
 }
+#sub-form{
+    width: 1460px;
+    margin: auto;
+}
+#clientname, #subno, #subplan{
+    font-weight: 500;
+}

@@ -5,6 +5,9 @@ mat-form-field {
 .dashboardToolbar {
     background-color:#6C63FF;
     color: azure;
+    text-align:center ;
+    margin: auto;
+    width: 1460px;
     font-size: 30px;
 }
 
@@ -13,6 +16,13 @@ mat-form-field {
 	display: flex;
 	size: 40px;
 	align-items: center;
+}
+
+#sub-table{
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  width: 1460px;
 }
 
 mat-header-cell {
