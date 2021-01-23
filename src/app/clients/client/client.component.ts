@@ -26,14 +26,14 @@ export class ClientComponent implements OnInit {
 
   onSubmit(data) {
     if(this.service.form.valid == false) {
-      this.http.post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Client/PostClientDetails',data)
+      this.http.post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Client/SaveClientDetails',data)
       .subscribe((result)=>{
-        console.warn("result",result)
+        console.log("result",result)
       })
-      console.warn(data);
+      console.log(data);
       this.service.form.reset();
       this.service.initializeFormGroup();
-      this.notificationService.success(":: Submitted Successfully");
+      this.notificationService.success();
       this.onClose();
     }
   }

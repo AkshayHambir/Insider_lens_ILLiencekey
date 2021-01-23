@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBarConfig } from '@angular/material/snack-bar';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,9 +15,13 @@ export class NotificationService {
     verticalPosition: 'top'
   }
 
-  success( msg: string ) {
+  success( ) {
     this.config['panelClass'] = ['notification','success'];
-    this.snackBar.open(msg,'',this.config);
+    Swal.fire(
+      'Good job!',
+      'You clicked the button!',
+      'success'
+    )
   }
 
   warn(msg: string) {

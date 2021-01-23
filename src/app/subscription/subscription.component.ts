@@ -69,7 +69,7 @@ export class SubscriptionComponent implements OnInit {
       "smCreatedBy": createdby,
       "smCreatedOn": currentdate
     }
-    this.http.post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/PostSubscriptionDetails', subform).subscribe(responseData => {
+    this.http.post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails', subform).subscribe(responseData => {
       console.log(responseData);
 
       const swalWithBootstrapButtons = Swal.mixin({
