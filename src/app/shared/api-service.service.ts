@@ -19,5 +19,20 @@ export class ApiServiceService {
   handleError(error){
       return throwError("login failed!!");
   }
+  
+  SubscriptionUser(data):Observable<any>{
+    return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails`,data)
+              .pipe(catchError(this.subError));
+  }
 
+  subError(error){
+    return throwError("Subscription failed!!");
+}
+  ClientPostUser(data):Observable<any>{
+  return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Client/SaveClientDetails`,data)
+            .pipe(catchError(this.clientError));
+}
+clientError(error){
+  return throwError("Client failed!!");
+}
 }

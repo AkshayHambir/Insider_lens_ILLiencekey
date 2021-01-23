@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { stringify } from '@angular/compiler/src/util';
+import {ApiServiceService} from '../shared/api-service.service';
 @Component({
   selector: 'app-subscription',
   templateUrl: './subscription.component.html',
@@ -14,7 +15,8 @@ export class SubscriptionComponent implements OnInit {
   @ViewChild('ingre_qty') ingre_qty: ElementRef;
   @ViewChild('in_qty') in_qty: ElementRef;
   constructor(public service: SubscriptionService,
-    private notificationService: NotificationService, private http: HttpClient) { }
+    private notificationService: NotificationService, private http: HttpClient,
+    private apiser:ApiServiceService) { }
 
   clientsName = [
     { id: 1, value: 'Client 1' },
@@ -22,6 +24,7 @@ export class SubscriptionComponent implements OnInit {
     { id: 3, value: 'Client 3' },
   ]
   ngOnInit(): void {
+
   }
   
   onsubmit(form: NgForm) {
@@ -69,68 +72,133 @@ export class SubscriptionComponent implements OnInit {
       "smCreatedBy": createdby,
       "smCreatedOn": currentdate
     }
-    this.http.post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails', subform).subscribe(responseData => {
-      console.log(responseData);
+    // this.http.post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails', subform)
+    // .subscribe(responseData => {
+    //   console.log(responseData);
 
-      const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-          confirmButton: 'btn btn-success',
-          cancelButton: 'btn btn-danger'
-        },
-        buttonsStyling: false
-      })
+    //   const swalWithBootstrapButtons = Swal.mixin({
+    //     customClass: {
+    //       confirmButton: 'btn btn-success',
+    //       cancelButton: 'btn btn-danger'
+    //     },
+    //     buttonsStyling: false
+    //   })
 
-      swalWithBootstrapButtons.fire({
-        title: 'Download?',
-        text: "Text File Will Be Downloaded!",
-        icon: 'info',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, download it!',
-        cancelButtonText: 'No, cancel!',
-        reverseButtons: true
-      }).then((result) => {
-        if (result.isConfirmed) {
-          sessionStorage.setItem('subclient', JSON.stringify(subclientform));
+    //   swalWithBootstrapButtons.fire({
+    //     title: 'Download?',
+    //     text: "Text File Will Be Downloaded!",
+    //     icon: 'info',
+    //     showCancelButton: true,
+    //     confirmButtonText: 'Yes, download it!',
+    //     cancelButtonText: 'No, cancel!',
+    //     reverseButtons: true
+    //   }).then((result) => {
+    //     if (result.isConfirmed) {
+    //       sessionStorage.setItem('subclient', JSON.stringify(subclientform));
 
-          var sub_form = sessionStorage.getItem('subclient');
-          var filename = 'Subcription-Form.txt';
+    //       var sub_form = sessionStorage.getItem('subclient');
+    //       var filename = 'Subcription-Form.txt';
 
-          var element = document.createElement('a');
+    //       var element = document.createElement('a');
 
-          element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(sub_form));
+    //       element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(sub_form));
 
-          element.setAttribute('download', filename);
+    //       element.setAttribute('download', filename);
 
-          element.style.display = "none";
+    //       element.style.display = "none";
 
-          document.body.appendChild(element);
+    //       document.body.appendChild(element);
 
-          element.click();
+    //       element.click();
 
-          document.body.removeChild(element);
+    //       document.body.removeChild(element);
 
-          swalWithBootstrapButtons.fire(
-            'Yes',
-            'Your file has been downloaded.',
-            'success'
-          )
-          form.reset();
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire(
-            'No',
-            'Your file has not been downloaded.',
-            'error'
-          )
-          form.reset();
-        }
-      })
+    //       swalWithBootstrapButtons.fire(
+    //         'Yes',
+    //         'Your file has been downloaded.',
+    //         'success'
+    //       )
+    //       form.reset();
+    //     } else if (
+    //       /* Read more about handling dismissals below */
+    //       result.dismiss === Swal.DismissReason.cancel
+    //     ) {
+    //       swalWithBootstrapButtons.fire(
+    //         'No',
+    //         'Your file has not been downloaded.',
+    //         'error'
+    //       )
+    //       form.reset();
+    //     }
+    //   })
 
       
-    });
+    // });
+
+    this.apiser.SubscriptionUser(subform).subscribe(responseData =>{
+      console.log(responseData);
+      const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+    
+          swalWithBootstrapButtons.fire({
+            title: 'Download?',
+            text: "Text File Will Be Downloaded!",
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, download it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+              sessionStorage.setItem('subclient', JSON.stringify(subclientform));
+    
+              var sub_form = sessionStorage.getItem('subclient');
+              var filename = 'Subcription-Form.txt';
+    
+              var element = document.createElement('a');
+    
+              element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(sub_form));
+    
+              element.setAttribute('download', filename);
+    
+              element.style.display = "none";
+    
+              document.body.appendChild(element);
+    
+              element.click();
+    
+              document.body.removeChild(element);
+    
+              swalWithBootstrapButtons.fire(
+                'Yes',
+                'Your file has been downloaded.',
+                'success'
+              )
+              form.reset();
+            } else if (
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'No',
+                'Your file has not been downloaded.',
+                'error'
+              )
+              form.reset();
+            }
+          })
+    },
+    (error)=>{
+      console.log(error);
+    })
   }
+
+
 
 
 

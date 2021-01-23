@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "http://demo.boardeye.com/ILLicenseKeyAPI/api/values",
+      "secure": false
+    }
+  }
+  

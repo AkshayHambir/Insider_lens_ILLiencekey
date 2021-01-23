@@ -3,6 +3,9 @@ import { ClientService } from '../../shared/client.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NotificationService } from '../../shared/notification.service';
 import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import {throwError} from 'rxjs';
+import {ApiServiceService} from '../../shared/api-service.service';
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -13,7 +16,8 @@ export class ClientComponent implements OnInit {
   constructor(public service: ClientService,
     public dialogRef: MatDialogRef<ClientComponent>,
     private notificationService: NotificationService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private apiser:ApiServiceService) { }
 
   ngOnInit(): void {
   }
@@ -26,18 +30,19 @@ export class ClientComponent implements OnInit {
 
   onSubmit(data) {
     if(this.service.form.valid == false) {
-      this.http.post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Client/SaveClientDetails',data)
-      .subscribe((result)=>{
-        console.log("result",result)
-      })
-      console.log(data);
-      this.service.form.reset();
+      this.apiser.ClientPostUser(data).subscribe(responseData =>{
+        console.log(responseData);
+        this.service.form.reset();
       this.service.initializeFormGroup();
       this.notificationService.success();
       this.onClose();
+      },
+    (error)=>{
+      console.log(error);
+    })
+      
     }
   }
-
   onClose() {
     this.service.form.reset();
     this.service.initializeFormGroup();
