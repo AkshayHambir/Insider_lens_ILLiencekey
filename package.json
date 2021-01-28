@@ -8,7 +8,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start": "ng serve --proxy-config proxy.conf.json"
-    
   },
   "private": true,
   "dependencies": {
@@ -24,13 +23,13 @@
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
     "bootstrap": "^5.0.0-beta1",
+    "firebase": "^7.0 || ^8.0",
     "font-awesome": "^4.7.0",
     "rxjs": "~6.5.4",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^10.13.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "firebase": "^7.0 || ^8.0"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/architect": ">= 0.900 < 0.1200",

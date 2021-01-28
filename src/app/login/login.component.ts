@@ -94,6 +94,7 @@ loginClicked(form:NgForm){
       sessionStorage.setItem('user', JSON.stringify(responseData));
         const user = JSON.parse(sessionStorage.getItem('user'));
         console.log(user); 
+        this.apiser.AccessToken = user.token;
         sessionStorage.setItem('firstname', user.firstName);
         sessionStorage.setItem('lastname', user.lastName);
         sessionStorage.setItem('username', user.username);

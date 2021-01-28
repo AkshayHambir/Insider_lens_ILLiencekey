@@ -1,4 +1,5 @@
 export class ClientList {
+    // cmIdPk: string;
     cmCin: string;
     cmName: string;
     cmAddress: string;
@@ -9,7 +10,8 @@ export class ClientList {
     cmCreatedBy: string;
     cmCreatedOn: string;
 
-    constructor (cmCin,cmName,cmAddress,cmCocontactNo,cmCoemailId,cmItcontactNo,cmItemailId,cmCreatedBy,cmCreatedOn) {
+    constructor (cmIdPk,cmCin,cmName,cmAddress,cmCocontactNo,cmCoemailId,cmItcontactNo,cmItemailId,cmCreatedBy,cmCreatedOn) {
+        // this.cmIdPk = cmIdPk;
         this.cmCin = cmCin;
         this.cmName = cmName;
         this.cmAddress = cmAddress;

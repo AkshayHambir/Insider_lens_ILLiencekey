@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
 import {Observable,throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-
+// import 'rxjs/add/operator/map';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiServiceService {
 
+  AccessToken:string = "";
   constructor(private http:HttpClient) { 
 
   }
@@ -21,8 +22,16 @@ export class ApiServiceService {
   }
   
   SubscriptionUser(data):Observable<any>{
-    return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails`,data)
-              .pipe(catchError(this.subError));
+    var HeadaersForSubAPI = new HttpHeaders(); 
+    console.log(this.AccessToken);
+    if(this.AccessToken) {
+            HeadaersForSubAPI.append('Authorization', 'Auth_Token');
+            
+            HeadaersForSubAPI.append('RequestToken', this.AccessToken); 
+    }
+    // let options = new HttpRequest({ HeadaersForSubAPI: HeadaersForSubAPI });
+    return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails`,data,{headers: HeadaersForSubAPI}) 
+            .pipe(catchError(this.subError));
   }
 
   subError(error){
