@@ -22,15 +22,24 @@ export class ApiServiceService {
   }
   
   SubscriptionUser(data):Observable<any>{
-    var HeadaersForSubAPI = new HttpHeaders(); 
-    console.log(this.AccessToken);
-    if(this.AccessToken) {
-            HeadaersForSubAPI.append('Authorization', 'Auth_Token');
+    // var HeadaersForSubAPI = new HttpHeaders(); 
+    // console.log(this.AccessToken);
+     // if(this.AccessToken) {
+            // HeadaersForSubAPI.append('Authorization', 'Auth_Token');
             
-            HeadaersForSubAPI.append('RequestToken', this.AccessToken); 
-    }
+            // HeadaersForSubAPI.append('RequestToken', this.AccessToken); 
+    // }
     // let options = new HttpRequest({ HeadaersForSubAPI: HeadaersForSubAPI });
-    return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails`,data,{headers: HeadaersForSubAPI}) 
+    const user = JSON.parse(sessionStorage.getItem('user'));
+        console.log(user.token);
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: user.token
+      })
+    };
+    return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails`,data,httpOptions) 
             .pipe(catchError(this.subError));
   }
 
@@ -38,7 +47,15 @@ export class ApiServiceService {
     return throwError("Subscription failed!!");
 }
   ClientPostUser(data):Observable<any>{
-  return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Client/SaveClientDetails`,data)
+    const user = JSON.parse(sessionStorage.getItem('user'));
+        console.log(user.token);
+        const httpOptions = {
+          headers: new HttpHeaders({
+            'Content-Type':  'application/json',
+            Authorization: user.token
+          })
+        };
+  return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Client/SaveClientDetails`,data,httpOptions)
             .pipe(catchError(this.clientError));
 }
 clientError(error){
