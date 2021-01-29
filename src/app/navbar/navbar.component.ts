@@ -20,13 +20,16 @@ export class NavbarComponent implements OnInit {
         firstname:string = "";
         lastname:string = "";
         username:string = "";
+
+       
   
 
     ngOnInit(): void {
-        document.getElementById("userInformation").style.width = "0px";
+       
         this.firstname = sessionStorage.getItem('firstname');
         this.lastname = sessionStorage.getItem('lastname');
         this.username = sessionStorage.getItem('username');
+        // document.getElementById("userInformation").style.width = "0px";
     }
 
     openNav = () => {
