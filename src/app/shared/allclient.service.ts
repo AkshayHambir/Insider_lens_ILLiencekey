@@ -14,13 +14,13 @@ export class ClientListService {
     getClientList(){
         const user = JSON.parse(sessionStorage.getItem('user'));
         console.log(user); 
-        var HeadaersForClientAPI = new HttpHeaders().set("Authorization", "Bearer " + user.token);
-        HeadaersForClientAPI.append('Content-Type', 'application/json'); 
+        var HeadersForClientAPI = new HttpHeaders().set("Authorization", "Bearer " + user.token);
+        HeadersForClientAPI.append('Content-Type', 'application/json'); 
         console.log(this.apiser.AccessToken);
         // if(user.token) {
         //         HeadaersForClientAPI.append('Authorization', 'Bearer' + user.token);
         // }
 
-        return this.http.get(this.url, {headers: HeadaersForClientAPI});
+        return this.http.get(this.url, {headers: HeadersForClientAPI});
     }
 }

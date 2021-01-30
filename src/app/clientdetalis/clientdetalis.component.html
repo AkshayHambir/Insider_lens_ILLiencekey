@@ -1,23 +1,22 @@
 <body>
     <div class="about-section">
-        <br>
-        <br>
         <p><b>Insider-Lens License </b></p>
     </div>
     <br>
-    <br>
     <div class="p1"><p style="text-align:center;"><b>Client Information</b></p></div>
     <hr>
-    <br>
     <div class="container">
         <img width="100px" height="100px" src="../../assets/Img/profile.jpg">
-        <h1><b>Name :</b> Dan Englishby</h1>
-        <h1><b>Number of Active DP :</b> 1</h1>
-        <h1><b>CO Contact No. : </b>1.0079</h1>
-        <h1><b>CO Email ID : </b>ajsn@gmail.com</h1>
-        <h1><b>IT Contact No. : </b>231</h1>
-        <h1><b>IT Contact No. : </b>anhsa@gmail.com</h1>
+        <h1><b>Name : </b>{{user.cmName}}</h1>
+        <h1><b>CIN Number : </b>{{user.cmCin}}</h1>       
+        <h1><b>Address : </b>{{user.cmAddress}} </h1>
+        <h1><b>CO Contact No. : </b>{{user.cmCocontactNo}}</h1>
+        <h1><b>CO Email ID : </b>{{user.cmCoemailId}}</h1>
+        <h1><b>IT Contact No. : </b>{{user.cmItcontactNo}}</h1>
+        <h1><b>IT Email ID : </b>{{user.cmItemailId}}</h1>
     </div>
+    <br>
+    <br>
 </body>
 <style>
     .footer {

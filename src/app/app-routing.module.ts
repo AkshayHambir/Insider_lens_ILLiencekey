@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'clients',component:ClientsComponent},
   {path:'subscription',component:SubscriptionComponent},
   {path:'mainmenu',component:MainclientsubComponent},
-  {path:'clientdetalis',component:ClientdetalisComponent}
+  {path:'clientdetails/:id',component:ClientdetalisComponent}
 ];
 
 @NgModule({

@@ -37,6 +37,7 @@ export class ApiServiceService {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         Authorization: user.token
+        //'Access-Control-Allow-Origin': '*'
       })
     };
     return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails`,data,httpOptions) 
@@ -53,6 +54,7 @@ export class ApiServiceService {
           headers: new HttpHeaders({
             'Content-Type':  'application/json',
             Authorization: user.token
+            //'Access-Control-Allow-Origin': '*'
           })
         };
   return this.http.post(`http://demo.boardeye.com/ILLicenseKeyAPI/api/Client/SaveClientDetails`,data,httpOptions)
