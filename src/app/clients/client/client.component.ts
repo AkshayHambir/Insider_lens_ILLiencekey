@@ -29,7 +29,7 @@ export class ClientComponent implements OnInit {
     
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form) {
     
     const clientName =form.value.clientName;
     console.log(clientName);
