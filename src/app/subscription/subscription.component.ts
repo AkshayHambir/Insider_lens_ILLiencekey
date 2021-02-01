@@ -6,6 +6,8 @@ import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { stringify } from '@angular/compiler/src/util';
 import {ApiServiceService} from '../shared/api-service.service';
+import { ClientListService } from '../shared/allclient.service';
+
 @Component({
   selector: 'app-subscription',
   templateUrl: './subscription.component.html',
@@ -16,15 +18,13 @@ export class SubscriptionComponent implements OnInit {
   @ViewChild('in_qty') in_qty: ElementRef;
   constructor(public service: SubscriptionService,
     private notificationService: NotificationService, private http: HttpClient,
-    private apiser:ApiServiceService) { }
+    private apiser:ApiServiceService,
+    private clientservice: ClientListService) { }
 
-  clientsName = [
-    { id: 1, value: 'Client 1' },
-    { id: 2, value: 'Client 2' },
-    { id: 3, value: 'Client 3' },
-  ]
+  clientsName : any = []
   ngOnInit(): void {
-   
+   this.clientservice.getClientList().subscribe(responseData =>{this.clientsName = responseData;
+   console.log(this.clientsName)})
   }
   
   onsubmit(form: NgForm) {
@@ -47,8 +47,8 @@ export class SubscriptionComponent implements OnInit {
     const currentdate = new Date();
     console.log(currentdate)
 
-    const timedate = currentdate.toLocaleDateString() + 'T' + currentdate.toLocaleTimeString();
-    console.log(timedate)
+    // const timedate = currentdate.toLocaleDateString() + 'T' + currentdate.toLocaleTimeString();
+    // console.log(timedate)
 
     const createdby = sessionStorage.getItem('id');
     console.log(createdby)
@@ -72,6 +72,7 @@ export class SubscriptionComponent implements OnInit {
       "smCreatedBy": createdby,
       "smCreatedOn": currentdate
     }
+    console.log(subform);
     // this.http.post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails', subform)
     // .subscribe(responseData => {
     //   console.log(responseData);

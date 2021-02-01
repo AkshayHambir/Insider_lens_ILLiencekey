@@ -27,7 +27,7 @@
                 <span>
                     <select name="" id="clientname" #ingre_qty>
                         <ng-container *ngFor="let clientNamesub of clientsName">
-                            <option value="{{clientNamesub.id}}">{{clientNamesub.value}}</option>
+                            <option value="{{clientNamesub.cmIdPk}}">{{clientNamesub.cmName}}</option>
                         </ng-container>
                     </select>
                 </span>
