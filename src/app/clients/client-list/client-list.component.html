@@ -51,7 +51,7 @@
         <ng-container matColumnDef="cmIdPk">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let row">
-                <button mat-icon-button (click)="onEdit()"><mat-icon>edit</mat-icon></button>
+                <a target="_blank" routerLink="/updateclient/{{row.cmIdPk}}"><button mat-icon-button><mat-icon>edit</mat-icon></button></a>
                 <a target="_blank" routerLink="/clientdetails/{{row.cmIdPk}}" ><button mat-icon-button ><mat-icon>open_in_browser</mat-icon></button></a>
             </mat-cell>
         </ng-container>
@@ -72,4 +72,5 @@
     </mat-table>
     <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
 </div>
+<br>
 

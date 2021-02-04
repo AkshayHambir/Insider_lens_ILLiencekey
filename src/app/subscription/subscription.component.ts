@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { stringify } from '@angular/compiler/src/util';
-import {ApiServiceService} from '../shared/api-service.service';
+import { ApiServiceService } from '../shared/api-service.service';
 import { ClientListService } from '../shared/allclient.service';
 
 @Component({
@@ -18,15 +18,17 @@ export class SubscriptionComponent implements OnInit {
   @ViewChild('in_qty') in_qty: ElementRef;
   constructor(public service: SubscriptionService,
     private notificationService: NotificationService, private http: HttpClient,
-    private apiser:ApiServiceService,
+    private apiser: ApiServiceService,
     private clientservice: ClientListService) { }
 
-  clientsName : any = []
+  clientsName: any = []
   ngOnInit(): void {
-   this.clientservice.getClientList().subscribe(responseData =>{this.clientsName = responseData;
-   console.log(this.clientsName)})
+    this.clientservice.getClientList().subscribe(responseData => {
+      this.clientsName = responseData;
+      console.log(this.clientsName)
+    })
   }
-  
+
   onsubmit(form: NgForm) {
 
     const qty = this.ingre_qty.nativeElement.value;
@@ -46,10 +48,7 @@ export class SubscriptionComponent implements OnInit {
 
     const currentdate = new Date();
     console.log(currentdate)
-
-    // const timedate = currentdate.toLocaleDateString() + 'T' + currentdate.toLocaleTimeString();
-    // console.log(timedate)
-
+    
     const createdby = sessionStorage.getItem('id');
     console.log(createdby)
 
@@ -73,156 +72,74 @@ export class SubscriptionComponent implements OnInit {
       "smCreatedOn": currentdate
     }
     console.log(subform);
-    // this.http.post('http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/SaveSubscriptionDetails', subform)
-    // .subscribe(responseData => {
-    //   console.log(responseData);
 
-    //   const swalWithBootstrapButtons = Swal.mixin({
-    //     customClass: {
-    //       confirmButton: 'btn btn-success',
-    //       cancelButton: 'btn btn-danger'
-    //     },
-    //     buttonsStyling: false
-    //   })
-
-    //   swalWithBootstrapButtons.fire({
-    //     title: 'Download?',
-    //     text: "Text File Will Be Downloaded!",
-    //     icon: 'info',
-    //     showCancelButton: true,
-    //     confirmButtonText: 'Yes, download it!',
-    //     cancelButtonText: 'No, cancel!',
-    //     reverseButtons: true
-    //   }).then((result) => {
-    //     if (result.isConfirmed) {
-    //       sessionStorage.setItem('subclient', JSON.stringify(subclientform));
-
-    //       var sub_form = sessionStorage.getItem('subclient');
-    //       var filename = 'Subcription-Form.txt';
-
-    //       var element = document.createElement('a');
-
-    //       element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(sub_form));
-
-    //       element.setAttribute('download', filename);
-
-    //       element.style.display = "none";
-
-    //       document.body.appendChild(element);
-
-    //       element.click();
-
-    //       document.body.removeChild(element);
-
-    //       swalWithBootstrapButtons.fire(
-    //         'Yes',
-    //         'Your file has been downloaded.',
-    //         'success'
-    //       )
-    //       form.reset();
-    //     } else if (
-    //       /* Read more about handling dismissals below */
-    //       result.dismiss === Swal.DismissReason.cancel
-    //     ) {
-    //       swalWithBootstrapButtons.fire(
-    //         'No',
-    //         'Your file has not been downloaded.',
-    //         'error'
-    //       )
-    //       form.reset();
-    //     }
-    //   })
-
-      
-    // });
-
-    this.apiser.SubscriptionUser(subform).subscribe(responseData =>{
+    this.apiser.SubscriptionUser(subform).subscribe(responseData => {
       console.log(responseData);
       const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-              confirmButton: 'btn btn-success',
-              cancelButton: 'btn btn-danger'
-            },
-            buttonsStyling: false
-          })
-    
-          swalWithBootstrapButtons.fire({
-            title: 'Download?',
-            text: "Text File Will Be Downloaded!",
-            icon: 'info',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, download it!',
-            cancelButtonText: 'No, cancel!',
-            reverseButtons: true
-          }).then((result) => {
-            if (result.isConfirmed) {
-              sessionStorage.setItem('subclient', JSON.stringify(subclientform));
-    
-              var sub_form = sessionStorage.getItem('subclient');
-              var filename = 'Subcription-Form.txt';
-    
-              var element = document.createElement('a');
-    
-              element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(sub_form));
-    
-              element.setAttribute('download', filename);
-    
-              element.style.display = "none";
-    
-              document.body.appendChild(element);
-    
-              element.click();
-    
-              document.body.removeChild(element);
-    
-              swalWithBootstrapButtons.fire(
-                'Yes',
-                'Your file has been downloaded.',
-                'success'
-              )
-              form.reset();
-            } else if (
-              /* Read more about handling dismissals below */
-              result.dismiss === Swal.DismissReason.cancel
-            ) {
-              swalWithBootstrapButtons.fire(
-                'No',
-                'Your file has not been downloaded.',
-                'error'
-              )
-              form.reset();
-            }
-          })
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+
+      swalWithBootstrapButtons.fire({
+        title: 'Download?',
+        text: "Text File Will Be Downloaded!",
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, download it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          sessionStorage.setItem('subclient', JSON.stringify(subclientform));
+
+          var sub_form = sessionStorage.getItem('subclient');
+          var filename = 'Subcription-Form.txt';
+
+          var element = document.createElement('a');
+
+          element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(sub_form));
+
+          element.setAttribute('download', filename);
+
+          element.style.display = "none";
+
+          document.body.appendChild(element);
+
+          element.click();
+
+          document.body.removeChild(element);
+
+          swalWithBootstrapButtons.fire(
+            'Yes',
+            'Your file has been downloaded.',
+            'success'
+          )
+          form.reset();
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'No',
+            'Your file has not been downloaded.',
+            'error'
+          )
+          form.reset();
+        }
+      })
     },
-    (error)=>{
-      console.log(error);
-    })
+      (error) => {
+        console.log(error);
+      })
   }
 
 
 
 
 
-  // onSubmit() {
-  //   if(this.service.form.valid == false) {
-  //     this.service.form.reset();
-  //     this.service.initializeFormGroup();
-  //     this.notificationService.success(":: Submitted Successfully");
-  //   }
-  // }
+
 }
 
-
-// URL- http://demo.boardeye.com/ILLicenseKeyAPI/api/Subscription/PostSubscriptionDetails (POST)
-// Parameters- {
-
-//         "smCmIdPkFk": 1,
-//         "smActiveDpcount": 1,
-//         "smSubscriptionPlan": "test",
-//         "smFromDate": "2019-03-04T12:58:35.653",
-//         "smToDate": "2019-03-04T12:58:35.653",
-//         "smCreatedBy": 1,
-//         "smCreatedOn": "2019-03-04T12:58:35.653"
-
-//     }
-// Response-True

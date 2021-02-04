@@ -1,0 +1,51 @@
+<br>
+<br>
+<form #updateForm="ngForm" (submit)="onsubmit(updateForm)">
+    <div class="container" id="sub-form">
+        <span>Update Client Detalis</span>
+    </div>
+    <br>
+    <br>
+    <div class="controles-container">
+        
+        <label for="cname">Client Name:</label>
+        <input type="text" text id="cname" name="cmName" ngModel class="input form-control" #subno="ngModel" required>
+    </div>
+    <div class="controles-container">
+        <label for="cin">CIN No.:</label>
+        <input type="number" number id="cin" name="cmCin" ngModel class="input form-control" #subno="ngModel" required>
+    </div>
+    <div class="controles-container">
+        
+        <label for="address">Address:</label>
+        <input type="text" text id="address" name="cmAddress" ngModel class="input form-control" #subno="ngModel" required>
+    </div>
+    <div class="controles-container">
+        
+        <label for="cocontact">CO Contact No:</label>
+        <input type="number" number id="cocontact" name="cmCocontactNo" ngModel class="input form-control" #subno="ngModel" required>
+    </div>
+    <div class="controles-container">
+        
+        <label for="itcontact">IT Contact No:</label>
+        <input type="number" number id="itcontact" name="cmItcontactNo" ngModel class="input form-control" #subno="ngModel" required>
+    </div>
+    <div class="controles-container">
+        
+        <label for="coemail">CO Email ID:</label>
+        <input type="email" email id="coemail" name="cmCoemailId" ngModel class="input form-control" #subno="ngModel" required>
+    </div>
+    <div class="controles-container">
+        
+        <label for="itemail">IT Email ID:</label>
+        <input type="email" email id="itemail" name="cmItemailId" ngModel class="input form-control" #subno="ngModel" required>
+    </div>
+
+    <div class="button-row">
+        <div class="center">
+            <button mat-raised-button color="primary" id="SubSubmit" [disabled]="!updateForm.valid" type="submit">Submit</button>
+        </div>
+    </div>
+    <br>
+    <br>
+</form>

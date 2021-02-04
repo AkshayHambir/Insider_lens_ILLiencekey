@@ -18,8 +18,8 @@ export class NotificationService {
   success( ) {
     this.config['panelClass'] = ['notification','success'];
     Swal.fire(
-      'Good job!',
-      'You clicked the button!',
+      'Successful!',
+      'You Have Created New Client!',
       'success'
     )
   }

@@ -1,6 +1,5 @@
 
 label {
-    width: 1460px;
     text-shadow: 5%;
     font-weight: bold;
     font-size: 15px;
@@ -72,7 +71,3 @@ label {
 #clientname, #subno, #subplan{
     font-weight: 500;
 }
-.mat-raised-button {
-    width: 150px; 
-    font-size: 18px;
-   }

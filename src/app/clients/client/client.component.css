@@ -3,3 +3,7 @@ label {
   font-weight: bold;
   font-size: 15px;
 }
+.mat-raised-button {
+ width: 150px; 
+ font-size: 18px;
+}
