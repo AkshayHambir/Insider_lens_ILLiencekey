@@ -71,3 +71,8 @@ label {
 #clientname, #subno, #subplan{
     font-weight: 500;
 }
+
+.mat-raised-button {
+    width: 150px; 
+    font-size: 18px;
+   }

@@ -16,20 +16,20 @@
             <mat-header-cell *matHeaderCellDef mat-sort-header>Client Name</mat-header-cell>
             <mat-cell *matCellDef="let element">{{element.cmName}}</mat-cell>
         </ng-container>
-        <ng-container matColumnDef="cmCin">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>CIN No.</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmCin}}</mat-cell>
+        <ng-container matColumnDef="cmCin" class="w-100">
+            <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'w-125'" >CIN No.</mat-header-cell>
+            <mat-cell *matCellDef="let element" [ngClass]="'w-125'">{{element.cmCin}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmAddress" >
             <mat-header-cell *matHeaderCellDef mat-sort-header>Address</mat-header-cell>
             <mat-cell *matCellDef="let element">{{element.cmAddress}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmCocontactNo">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>CO Contact No.</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header >CO Contact No.</mat-header-cell>
             <mat-cell *matCellDef="let element">{{element.cmCocontactNo}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmCoemailId" >
-            <mat-header-cell *matHeaderCellDef mat-sort-header>CO Email ID</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header >CO Email ID</mat-header-cell>
             <mat-cell *matCellDef="let element">{{element.cmCoemailId}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmItcontactNo" >

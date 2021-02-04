@@ -11,3 +11,11 @@ mat-header-cell {
 #client-table{
     width: 1460px;
 }
+
+.w-125{
+    max-width: 125px;
+}
+
+.w-200 {
+    max-width: 200px;
+}

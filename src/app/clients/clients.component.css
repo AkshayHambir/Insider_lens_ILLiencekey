@@ -6,6 +6,7 @@
 mat-toolbar.clientToolbar {
     background-color:#6C63FF;
     color: #fff;
+    font-size: 25px;
 }
 
 #client-form{

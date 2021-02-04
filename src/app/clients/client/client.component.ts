@@ -63,18 +63,19 @@ export class ClientComponent implements OnInit {
       "cmCreatedOn": currentdate
      }
      console.log(subform);
+     if(this.service.form.valid == true){
       this.apiser.ClientPostUser(subform).subscribe(responseData =>{
         console.log(responseData);
         this.service.form.reset();
-      this.service.initializeFormGroup();
-      this.notificationService.success();
-      this.onClose();
+        this.service.initializeFormGroup();
+        this.notificationService.success();
+        this.onClose();
       },
     (error)=>{
       console.log(error);
     })
       
-    
+    } 
   }
   
   onClose() {

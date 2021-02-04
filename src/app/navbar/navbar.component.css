@@ -266,9 +266,11 @@ nav ul li:hover ul ul{
 }
 
 .user_img img{
-    height: 50px;
-    width: 50px;
-    margin-top: 2px;
+    height: 75px;
+    width: 75px;
+    margin-top: -18px;
+    margin-left: -32px;
+    
 }
 
 #userInformation{
@@ -282,7 +284,7 @@ nav ul li:hover ul ul{
     overflow-x: hidden;
     overflow-y: hidden;
     transition: 0.5s;
-    height: 80px;
+    height: 90px;
     border-radius: 5px;
     box-shadow: 3px 3px 10px  rgba(0,0,0,0.2);
 }
