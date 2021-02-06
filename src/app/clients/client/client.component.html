@@ -9,31 +9,31 @@
     <mat-grid-list cols="2" rowHeight="500px">
         <mat-grid-tile>
             <div class="controles-container">
-                <input type="hidden" formControlName="$key">
+                <input type="hidden" >
                 <label>Client Name *</label>
                 <mat-form-field floatLabel="never" appearance="fill">
-                    <input formControlName="clientName" matInput placeholder="Client Name *" required>
+                    <input formControlName="clientName" matInput placeholder="Client Name *" >
                     <mat-error *ngIf="service.form.controls['clientName'].errors?.required">This field is mandatory.</mat-error>
                     <mat-error *ngIf="service.form.controls['clientName'].errors?.minlength">Minimum a character is needed.</mat-error>
                     <mat-error *ngIf="service.form.controls['clientName'].errors?.maxlength">Maximum 100 characters can be entered.</mat-error>
                 </mat-form-field>
                 <label>CIN No *</label>
                 <mat-form-field floatLabel="never" appearance="fill">
-                    <input formControlName="cinNo" matInput placeholder="CIN No *" required>
+                    <input formControlName="cinNo" matInput placeholder="CIN No *">
                     <mat-error *ngIf="service.form.controls['cinNo'].errors?.required">This field is mandatory.</mat-error>
                     <mat-error *ngIf="service.form.controls['cinNo'].errors?.minlength">Minimum a character is needed.</mat-error>
                     <mat-error *ngIf="service.form.controls['cinNo'].errors?.maxlength">Maximum 50 characters can be entered.</mat-error>
                 </mat-form-field>
-                <label>CO Contact No</label>
+                <label>CO Contact No *</label>
                 <mat-form-field floatLabel="never" appearance="fill">
-                    <input formControlName="coContactno" matInput placeholder="CO Contact No" required>
+                    <input formControlName="coContactno" matInput placeholder="CO Contact No *" >
                     <mat-error *ngIf="service.form.controls['coContactno'].errors?.minlength">Minimum a character is needed.</mat-error>
                     <mat-error *ngIf="service.form.controls['coContactno'].errors?.maxlength">Maximum 50 characters can be entered.</mat-error>
                     <mat-error *ngIf="service.form.controls['coContactno'].errors?.pattern">Only numbers are valid.</mat-error>
                 </mat-form-field>
-                <label>IT Contact No</label>
+                <label>IT Contact No *</label>
                 <mat-form-field floatLabel="never" appearance="fill">
-                    <input formControlName="itContactno" matInput placeholder="IT Contact No" required>
+                    <input formControlName="itContactno" matInput placeholder="IT Contact No *" >
                     <mat-error *ngIf="service.form.controls['itContactno'].errors?.minlength">Minimum a character is needed.</mat-error>
                     <mat-error *ngIf="service.form.controls['itContactno'].errors?.maxlength">Maximum 50 characters can be entered.</mat-error>
                     <mat-error *ngIf="service.form.controls['itContactno'].errors?.pattern">Only numbers are valid.</mat-error>
@@ -43,7 +43,7 @@
         
         <mat-grid-tile>
             <div class="controles-container">
-                <input type="hidden" formControlName="$key" required>
+                <input type="hidden" required>
                 <label>Address</label>
                 <mat-form-field floatLabel="never" appearance="fill">
                     <textarea formControlName="address" matInput placeholder="Address"></textarea>
@@ -69,7 +69,7 @@
     </mat-grid-list>
     <div class = "button-row">
         <div class="center">
-            <button mat-raised-button color="primary" type="submit">Submit</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid" >Submit</button>
             <!-- <button mat-raised-button color="primary" (click)="onClear()">Cancel</button>        -->
         </div>
     </div>

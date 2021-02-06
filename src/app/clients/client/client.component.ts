@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import {throwError} from 'rxjs';
 import {ApiServiceService} from '../../shared/api-service.service';
-import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -32,24 +32,24 @@ export class ClientComponent implements OnInit {
   onSubmit(form) {
     
     const clientName =form.value.clientName;
-    console.log(clientName);
+    //console.log(clientName);
 
     const cinNo =form.value.cinNo;
-    console.log(cinNo);
+   // console.log(cinNo);
     const coContactno =form.value.coContactno;
-    console.log(coContactno);
+    //console.log(coContactno);
     const itContactno =form.value.itContactno;
-    console.log(itContactno);
+    //console.log(itContactno);
     const address =form.value.address;
-    console.log(address);
+    //console.log(address);
     const coemail =form.value.coemail;
-    console.log(coemail);
+    //console.log(coemail);
     const itemail =form.value.itemail;
-    console.log(itemail);
+    //console.log(itemail);
     const createdby = sessionStorage.getItem('id');
-    console.log(createdby);
+    //console.log(createdby);
     const currentdate = new Date();
-    console.log(currentdate)
+    //console.log(currentdate)
      
     const subform = {
       "cmName": clientName,
@@ -62,8 +62,9 @@ export class ClientComponent implements OnInit {
       "cmCreatedBy": createdby,
       "cmCreatedOn": currentdate
      }
-     console.log(subform);
-     if(this.service.form.valid == true){
+     
+     if(this.service.form.valid){
+      console.log(subform);
       this.apiser.ClientPostUser(subform).subscribe(responseData =>{
         console.log(responseData);
         this.service.form.reset();

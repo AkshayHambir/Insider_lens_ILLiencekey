@@ -16,7 +16,7 @@
             <mat-header-cell *matHeaderCellDef mat-sort-header>Client Name</mat-header-cell>
             <mat-cell *matCellDef="let element">{{element.cmName}}</mat-cell>
         </ng-container>
-        <ng-container matColumnDef="cmCin" class="w-100">
+        <ng-container matColumnDef="cmCin">
             <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'w-125'" >CIN No.</mat-header-cell>
             <mat-cell *matCellDef="let element" [ngClass]="'w-125'">{{element.cmCin}}</mat-cell>
         </ng-container>
