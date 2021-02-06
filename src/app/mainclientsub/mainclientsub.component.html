@@ -16,41 +16,18 @@
         </mat-form-field>
     </div>
 
-    <!--<div class="table-div">
-    <table class="table table-bordered table-hover" id="customers">
-        <thead class="table-head">
-            <tr>
-                <th>CIN No.</th>
-                <th>Number Of Active DP</th>
-                <th>Subscription Plan</th>
-                <th>From Date</th>
-                <th>To Date</th>
-                <th>Created On</th>
-                <th>Created By</th>
-            </tr>
-        </thead>     
-            <tbody>
-                <tr  *ngFor="let i of SubDeatils; let m = index">
-                  
-                    <td>{{i.smCmIdPkFk}}</td>
-                    <td>{{i.smActiveDpcount}}</td>
-                    <td>{{i.smSubscriptionPlan}}</td>
-                    <td>{{i.smFromDate}}</td>
-                    <td>{{i.smToDate}}</td>
-                    <td>{{i.smCreatedOn}}</td>
-                    <td>{{i.smCreatedBy}}</td>
-                </tr>
-            </tbody>
-    </table>
-    </div> -->
      <div class="mat-elevation-z8" id="sub-table">
         <mat-table [dataSource]="listData" matSort>
-            <ng-container matColumnDef="smCmIdPkFk">
+            <ng-container matColumnDef="smCIN">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>CIN No.</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.smCmIdPkFk}}</mat-cell>
+                <mat-cell *matCellDef="let element">{{element.smCIN}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="smClientName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Company Name</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.smClientName}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smActiveDpcount">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Number of Active DP</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Active DPs</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.smActiveDpcount}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smSubscriptionPlan">

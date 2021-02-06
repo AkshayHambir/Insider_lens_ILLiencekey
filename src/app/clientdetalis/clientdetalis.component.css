@@ -17,12 +17,24 @@ h1, h2, h3, h4, h5 {
   color: #000;
   padding-bottom: 8px
 }
-.container {
-  margin: auto;
-  width: 350px;
+/* .container{
+  display: flex;
+} */
+.clientdetalis {
+  margin-left: 150px;
+  width: 100%;
   text-align: center;
 }
 .listFlex {display: flex; justify-content: center;}
 img{
   margin-bottom: 10px;
+}
+
+#client-table{
+  margin: 50px;
+  width: 1360px;
+}
+.dashboardToolbar{
+  margin-left: 50px;
+  width: 1360px;
 }

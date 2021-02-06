@@ -20,7 +20,7 @@ export class MainclientsubComponent implements OnInit {
     public allclientsubService: ClientSubListService) { }
   
   listData = new MatTableDataSource(this.ELEMENT_DATA);
-  displayedColumns: string[] = ['smCmIdPkFk', 'smActiveDpcount', 'smSubscriptionPlan','smCreatedByName','smCreatedOnstr', 'smFromDatestr', 'smToDatestr'];
+  displayedColumns: string[] = ['smCIN', 'smClientName', 'smActiveDpcount', 'smSubscriptionPlan','smCreatedByName','smCreatedOnstr', 'smFromDatestr', 'smToDatestr'];
   @ViewChild(MatSort,{static: true}) sort: MatSort;
   @ViewChild(MatPaginator,{static: true}) paginator: MatPaginator;
   searchKey: string;
@@ -47,14 +47,3 @@ export class MainclientsubComponent implements OnInit {
 
 
 }
-// Response- {
-
-//   "smCmIdPkFk": 1,
-//   "smActiveDpcount": 1,
-//   "smSubscriptionPlan": "test",
-//   "smFromDate": "2019-03-04T12:58:35.653",
-//   "smToDate": "2019-03-04T12:58:35.653",
-//   "smCreatedBy": 1,
-//   "smCreatedOn": "2019-03-04T12:58:35.653"
-
-// }, n number of rows

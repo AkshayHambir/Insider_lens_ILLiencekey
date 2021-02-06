@@ -3,21 +3,73 @@
         <p><b>Insider-Lens License </b></p>
     </div>
     <br>
-    <div class="p1"><p style="text-align:center;"><b>Client Information</b></p></div>
+    <div class="p1">
+        <p style="text-align:center;"><b>Client Information</b></p>
+    </div>
     <hr>
     <div class="container">
-        <img width="100px" height="100px" src="../../assets/Img/profile.jpg">
-        <h1><b>Name : </b>{{user.cmName}}</h1>
-        <h1><b>CIN Number : </b>{{user.cmCin}}</h1>       
-        <h1><b>Address : </b>{{user.cmAddress}} </h1>
-        <h1><b>CO Contact No. : </b>{{user.cmCocontactNo}}</h1>
-        <h1><b>CO Email ID : </b>{{user.cmCoemailId}}</h1>
-        <h1><b>IT Contact No. : </b>{{user.cmItcontactNo}}</h1>
-        <h1><b>IT Email ID : </b>{{user.cmItemailId}}</h1>
-    </div>
-    <br>
-    <br>
-</body>
+        <div class="clientdetalis clientclass">
+            <img width="100px" height="100px" src="../../assets/Img/profile.jpg">
+            <h1><b>Name : </b>{{user.cmName}}</h1>
+            <h1><b>CIN Number : </b>{{user.cmCin}}</h1>
+            <h1><b>Address : </b>{{user.cmAddress}} </h1>
+            <h1><b>CO Contact No. : </b>{{user.cmCocontactNo}}</h1>
+            <h1><b>CO Email ID : </b>{{user.cmCoemailId}}</h1>
+            <h1><b>IT Contact No. : </b>{{user.cmItcontactNo}}</h1>
+            <h1><b>IT Email ID : </b>{{user.cmItemailId}}</h1>
+        </div>
+        <br>
+        <div class="container1">
+            <mat-toolbar class="dashboardToolbar">
+                <span class="fill-remaining-space"></span>
+                <span>Client Subscription Detalis</span>
+                <span class="fill-remaining-space"></span>
+            </mat-toolbar>
+
+            <div class="mat-elevation-z8" id="client-table">
+                <mat-table [dataSource]="listData" matSort>
+                    <ng-container matColumnDef="smSubscriptionPlan">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Subscription Plan</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.smSubscriptionPlan}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="smActiveDpcount">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Active DPs</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.smActiveDpcount}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="smFromDatestr">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>From Date</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.smFromDatestr}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="smToDatestr">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>To Date</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.smToDatestr}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="smCreatedOnstr">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Created On</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.smCreatedOnstr}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="loading">
+                        <mat-footer-cell *matFooterCellDef colspan="6">
+                            Loading data...
+                        </mat-footer-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="noData">
+                        <mat-footer-cell *matFooterCellDef colspan="6">
+                            No Data.
+                        </mat-footer-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+                    <mat-footer-row *matFooterRowDef="['noData']"
+                        [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+                </mat-table>
+                <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
 <style>
     .footer {
         position: fixed;

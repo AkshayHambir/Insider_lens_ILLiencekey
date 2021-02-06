@@ -1,4 +1,12 @@
-
+.about-section {
+    padding: 40px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #6C63FF;
+    color: white;
+  }
+  
 label {
     text-shadow: 5%;
     font-weight: bold;
