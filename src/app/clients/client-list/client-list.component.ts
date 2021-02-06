@@ -25,7 +25,7 @@ export class ClientListComponent implements OnInit {
     public allclientService: ClientListService) { }
     ELEMENT_DATA: ClientList[]=[];
 
-    displayedColumns: string[] = ['cmCin','cmName','cmAddress','cmCocontactNo','cmCoemailId','cmItcontactNo','cmItemailId','cmCreatedBy','cmCreatedOn','cmIdPk'];
+    displayedColumns: string[] = ['cmCin','cmName','cmAddress','cmCocontactNo','cmCoemailId','cmItcontactNo','cmItemailId','cmCreatedByName','cmCreatedOnStr','cmIdPk'];
     listData = new MatTableDataSource<ClientList>(this.ELEMENT_DATA);
     @ViewChild(MatSort,{static: true}) sort: MatSort ;
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;

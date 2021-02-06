@@ -40,13 +40,13 @@
             <mat-header-cell *matHeaderCellDef mat-sort-header>IT Email ID</mat-header-cell>
             <mat-cell *matCellDef="let element">{{element.cmItemailId}}</mat-cell>
         </ng-container>
-        <ng-container matColumnDef="cmCreatedBy" >
+        <ng-container matColumnDef="cmCreatedByName" >
             <mat-header-cell *matHeaderCellDef mat-sort-header>Created By</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmCreatedBy}}</mat-cell>
+            <mat-cell *matCellDef="let element">{{element.cmCreatedByName}}</mat-cell>
         </ng-container>
-        <ng-container matColumnDef="cmCreatedOn" >
+        <ng-container matColumnDef="cmCreatedOnStr" >
             <mat-header-cell *matHeaderCellDef mat-sort-header>Created On</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmCreatedOn}}</mat-cell>
+            <mat-cell *matCellDef="let element">{{element.cmCreatedOnStr}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmIdPk">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
