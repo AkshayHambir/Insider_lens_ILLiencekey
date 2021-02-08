@@ -20,7 +20,6 @@ mat-form-field {
 
 #sub-table{
   margin: auto;
-  text-align: center;
   align-items: center;
   width: 1460px;
 }
@@ -28,6 +27,10 @@ mat-form-field {
 mat-header-cell {
     font-weight: bolder;
     font-size: 4mm;
+}
+
+.w-125 {
+  text-align: center;
 }
 
 *{

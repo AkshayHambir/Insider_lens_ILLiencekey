@@ -19,7 +19,7 @@
      <div class="mat-elevation-z8" id="sub-table">
         <mat-table [dataSource]="listData" matSort>
             <ng-container matColumnDef="smCIN">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>CIN No.</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'w-125'">CIN No.</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.smCIN}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smClientName">
