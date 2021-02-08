@@ -22,14 +22,7 @@ export class ApiServiceService {
   }
 
   SubscriptionUser(data): Observable<any> {
-    // var HeadaersForSubAPI = new HttpHeaders(); 
-    // console.log(this.AccessToken);
-    // if(this.AccessToken) {
-    // HeadaersForSubAPI.append('Authorization', 'Auth_Token');
-
-    // HeadaersForSubAPI.append('RequestToken', this.AccessToken); 
-    // }
-    // let options = new HttpRequest({ HeadaersForSubAPI: HeadaersForSubAPI });
+    
     const user = JSON.parse(sessionStorage.getItem('user'));
     console.log(user.token);
 

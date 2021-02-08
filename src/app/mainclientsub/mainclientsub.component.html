@@ -51,13 +51,19 @@
                 <mat-header-cell *matHeaderCellDef mat-sort-header>To Date</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.smToDatestr}}</mat-cell>
             </ng-container>
+            <ng-container matColumnDef="smIdPk">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button (click)="download(row.smIdPk)" mat-icon-button><mat-icon>file_download</mat-icon></button>
+                </mat-cell>
+            </ng-container>
             <ng-container matColumnDef="loading">
-                <mat-footer-cell *matFooterCellDef colspan="6">
+                <mat-footer-cell *matFooterCellDef colspan="9">
                     Loading data...
                 </mat-footer-cell>
             </ng-container>
             <ng-container matColumnDef="noData">
-                <mat-footer-cell *matFooterCellDef colspan="6">
+                <mat-footer-cell *matFooterCellDef colspan="9">
                     No Data.
                 </mat-footer-cell>
             </ng-container>
@@ -72,11 +78,9 @@
     </div> 
     <br>
     <br>
-    <br>
 </div>
 <style>
     .footer {
-        position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;
