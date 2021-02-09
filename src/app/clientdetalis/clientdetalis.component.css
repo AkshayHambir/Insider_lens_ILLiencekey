@@ -13,7 +13,6 @@
   font-size: 30px;
 }
 h1, h2, h3, h4, h5 {
-  border-bottom: 1px solid #ccc;
   color: #000;
   padding-bottom: 8px
 }
@@ -21,7 +20,7 @@ h1, h2, h3, h4, h5 {
   display: flex;
 } */
 .clientdetalis {
-  margin-left: 150px;
+  margin-left: 50px;
   width: 100%;
   text-align: center;
 }
@@ -32,9 +31,9 @@ img{
 
 #client-table{
   margin: 50px;
-  width: 1360px;
+  width: 1300px;
 }
 .dashboardToolbar{
   margin-left: 50px;
-  width: 1360px;
+  width: 1300px;
 }
