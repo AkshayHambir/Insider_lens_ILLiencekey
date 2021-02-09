@@ -19,37 +19,37 @@
      <div class="mat-elevation-z8" id="sub-table">
         <mat-table [dataSource]="listData" matSort>
             <ng-container matColumnDef="smCIN">
-                <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'w-125'">CIN No.</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.smCIN}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">CIN No.</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.smCIN}}">{{element.smCIN}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smClientName">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Company Name</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.smClientName}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">Company Name</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.smClientName}}">{{element.smClientName}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smActiveDpcount">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Active DPs</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.smActiveDpcount}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">Active DPs</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.smActiveDpcount}}">{{element.smActiveDpcount}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smSubscriptionPlan">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Subscription Plan</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.smSubscriptionPlan}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">Subscription Plan</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.smSubscriptionPlan}}">{{element.smSubscriptionPlan}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smCreatedByName">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Created By</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.smCreatedByName}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">Created By</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.smCreatedByName}}">{{element.smCreatedByName}}</mat-cell>
             </ng-container>
             
             <ng-container matColumnDef="smCreatedOnstr">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Created On</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.smCreatedOnstr}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">Created On</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.smCreatedOnstr}}">{{element.smCreatedOnstr}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smFromDatestr">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>From Date</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.smFromDatestr}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">From Date</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.smFromDatestr}}">{{element.smFromDatestr}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smToDatestr">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>To Date</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.smToDatestr}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">To Date</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.smToDatestr}}">{{element.smToDatestr}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="smIdPk">
                 <mat-header-cell *matHeaderCellDef></mat-header-cell>

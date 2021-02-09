@@ -13,40 +13,40 @@
 <div class="mat-elevation-z8" id="client-table">
     <mat-table [dataSource]="listData" matSort>
         <ng-container matColumnDef="cmName">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Client Name</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmName}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">Client Name</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.cmName}}">{{element.cmName}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmCin">
-            <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'w-125'" >CIN No.</mat-header-cell>
-            <mat-cell *matCellDef="let element" [ngClass]="'w-125'">{{element.cmCin}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">CIN No.</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.cmCin}}">{{element.cmCin}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmAddress" >
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Address</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmAddress}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">Address</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.cmAddress}}">{{element.cmAddress}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmCocontactNo">
-            <mat-header-cell *matHeaderCellDef mat-sort-header >CO Contact No.</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmCocontactNo}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">CO Contact No.</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.cmCocontactNo}}">{{element.cmCocontactNo}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmCoemailId" >
-            <mat-header-cell *matHeaderCellDef mat-sort-header >CO Email ID</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmCoemailId}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">CO Email ID</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.cmCoemailId}}">{{element.cmCoemailId}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmItcontactNo" >
-            <mat-header-cell *matHeaderCellDef mat-sort-header>IT Contact No.</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmItcontactNo}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">IT Contact No.</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.cmItcontactNo}}">{{element.cmItcontactNo}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmItemailId" >
-            <mat-header-cell *matHeaderCellDef mat-sort-header>IT Email ID</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmItemailId}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">IT Email ID</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.cmItemailId}}">{{element.cmItemailId}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmCreatedByName" >
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Created By</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmCreatedByName}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">Created By</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.cmCreatedByName}}">{{element.cmCreatedByName}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmCreatedOnStr" >
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Created On</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.cmCreatedOnStr}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="clientinfo">Created On</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="clientinfo" ngbTooltip="{{element.cmCreatedOnStr}}">{{element.cmCreatedOnStr}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="cmIdPk">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>

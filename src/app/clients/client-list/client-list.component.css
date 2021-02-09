@@ -13,9 +13,25 @@ mat-header-cell {
 }
 
 .w-125{
+    width: 40px;
     max-width: 125px;
 }
 
 .w-200 {
     max-width: 200px;
+}
+.clientinfo{
+    word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }

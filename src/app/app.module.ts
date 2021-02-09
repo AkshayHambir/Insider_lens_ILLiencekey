@@ -17,6 +17,7 @@ import { SubscriptionComponent } from './subscription/subscription.component';
 import { MainclientsubComponent } from './mainclientsub/mainclientsub.component';
 import { ClientdetalisComponent } from './clientdetalis/clientdetalis.component';
 import { UpdateclientComponent } from './clients/updateclient/updateclient.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { UpdateclientComponent } from './clients/updateclient/updateclient.compo
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
