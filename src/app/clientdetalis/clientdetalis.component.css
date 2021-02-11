@@ -12,14 +12,14 @@
 {
   font-size: 30px;
 }
-h1, h2, h3, h4, h5 {
+h2, h3, h4, h5 {
   color: #000;
   padding-bottom: 8px
 }
 /* .container{
   display: flex;
 } */
-.clientdetalis {
+.clientdetails {
   margin-left: 50px;
   width: 100%;
   text-align: center;
@@ -36,4 +36,5 @@ img{
 .dashboardToolbar{
   margin-left: 50px;
   width: 1300px;
+  font-size: 25px;
 }
